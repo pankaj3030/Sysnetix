@@ -6,20 +6,6 @@
     <title>SYSNETIX - Enterprise IT Infrastructure Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styles */
-        :root {
-            --blue-600: #2563EB;
-            --blue-700: #1D4ED8;
-            --blue-800: #1E40AF;
-            --gray-50: #F9FAFB;
-            --gray-100: #F3F4F6;
-            --gray-200: #E5E7EB;
-            --gray-600: #4B5563;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            --white: #FFFFFF;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -31,10 +17,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--gray-700);
-            background-color: var(--white);
+            color: #374151;
+            background-color: #ffffff;
         }
 
         .container {
@@ -43,7 +29,6 @@
             padding: 0 24px;
         }
 
-        /* Animations */
         @keyframes slideInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -70,14 +55,14 @@
         }
 
         @keyframes blink {
-            0%, 49%, 100% { border-right-color: var(--blue-600); }
+            0%, 49%, 100% { border-right-color: #2563EB; }
             50%, 99% { border-right-color: transparent; }
         }
 
         /* Navigation */
         .navbar {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--gray-200);
+            background-color: #ffffff;
+            border-bottom: 1px solid #E5E7EB;
             position: sticky;
             top: 0;
             z-index: 50;
@@ -106,7 +91,7 @@
             height: 40px;
             background: linear-gradient(135deg, #2563EB, #1E40AF);
             border-radius: 8px;
-            color: var(--white);
+            color: white;
             font-weight: bold;
             font-size: 18px;
         }
@@ -115,19 +100,15 @@
             display: none;
         }
 
-        .logo-text.show {
-            display: block;
-        }
-
         .company-name {
             font-weight: bold;
             font-size: 18px;
-            color: var(--gray-900);
+            color: #111827;
         }
 
         .tagline {
             font-size: 12px;
-            color: var(--gray-600);
+            color: #4B5563;
         }
 
         @media (min-width: 640px) {
@@ -149,7 +130,7 @@
 
         .nav-links a {
             padding: 8px 16px;
-            color: var(--gray-700);
+            color: #374151;
             font-weight: 500;
             font-size: 14px;
             transition: color 0.3s;
@@ -157,13 +138,13 @@
         }
 
         .nav-links a:hover {
-            color: var(--blue-600);
+            color: #2563EB;
         }
 
         .demo-btn {
             display: none;
-            background-color: var(--blue-600);
-            color: var(--white);
+            background-color: #2563EB;
+            color: white;
             padding: 8px 24px;
             border-radius: 8px;
             border: none;
@@ -174,7 +155,7 @@
         }
 
         .demo-btn:hover {
-            background-color: var(--blue-700);
+            background-color: #1D4ED8;
         }
 
         .demo-btn.desktop-nav {
@@ -193,7 +174,7 @@
             border: none;
             cursor: pointer;
             font-size: 24px;
-            color: var(--gray-700);
+            color: #374151;
         }
 
         @media (min-width: 768px) {
@@ -202,11 +183,10 @@
             }
         }
 
-        /* Mobile Menu */
         .mobile-menu {
             display: none;
-            background-color: var(--white);
-            border-bottom: 1px solid var(--gray-200);
+            background-color: white;
+            border-bottom: 1px solid #E5E7EB;
             padding: 16px 24px;
             flex-direction: column;
             gap: 12px;
@@ -217,14 +197,14 @@
         }
 
         .mobile-menu a {
-            color: var(--gray-700);
+            color: #374151;
             text-decoration: none;
             padding: 8px 0;
             font-weight: 500;
         }
 
         .mobile-menu a:hover {
-            color: var(--blue-600);
+            color: #2563EB;
         }
 
         .mobile-menu .demo-btn {
@@ -236,7 +216,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
-            padding: 128px 24px;
+            padding: 80px 24px;
             position: relative;
             overflow: hidden;
         }
@@ -261,7 +241,7 @@
         .typing-text {
             font-size: 48px;
             font-weight: bold;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 24px;
             line-height: 1.2;
             min-height: 96px;
@@ -275,20 +255,20 @@
 
         .cursor {
             display: inline-block;
-            border-right: 3px solid var(--blue-600);
+            border-right: 3px solid #2563EB;
             animation: blink 1s infinite;
             margin-left: 2px;
         }
 
         .hero-desc {
             font-size: 18px;
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 16px;
             min-height: 48px;
         }
 
         .hero-subtitle {
-            color: var(--gray-600);
+            color: #4B5563;
             margin-bottom: 32px;
         }
 
@@ -320,18 +300,18 @@
         }
 
         .btn-primary {
-            background-color: var(--blue-600);
-            color: var(--white);
+            background-color: #2563EB;
+            color: white;
             box-shadow: 0 20px 25px rgba(37, 99, 235, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--blue-700);
+            background-color: #1D4ED8;
         }
 
         .btn-secondary {
-            border: 2px solid var(--blue-600);
-            color: var(--blue-600);
+            border: 2px solid #2563EB;
+            color: #2563EB;
             background-color: transparent;
         }
 
@@ -340,8 +320,8 @@
         }
 
         .btn-white {
-            background-color: var(--white);
-            color: var(--blue-600);
+            background-color: white;
+            color: #2563EB;
         }
 
         .btn-white:hover {
@@ -376,7 +356,7 @@
         }
 
         .enterprise-text {
-            color: var(--white);
+            color: white;
             font-size: 24px;
             font-weight: bold;
         }
@@ -396,21 +376,21 @@
         .section-header h2 {
             font-size: 36px;
             font-weight: bold;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 16px;
         }
 
         .section-header p {
             font-size: 18px;
-            color: var(--gray-600);
+            color: #4B5563;
             max-width: 768px;
             margin: 0 auto;
         }
 
         /* Services Section */
         .services {
-            padding: 128px 24px;
-            background-color: var(--gray-50);
+            padding: 80px 24px;
+            background-color: #F9FAFB;
         }
 
         .services-grid {
@@ -432,8 +412,8 @@
         }
 
         .service-card {
-            background-color: var(--white);
-            border: 2px solid var(--gray-100);
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 24px;
             transition: all 0.3s;
@@ -441,7 +421,7 @@
         }
 
         .service-card:hover {
-            border-color: var(--blue-600);
+            border-color: #2563EB;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -460,7 +440,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--blue-600);
+            color: #2563EB;
             font-size: 20px;
             margin-right: 12px;
             flex-shrink: 0;
@@ -468,8 +448,8 @@
         }
 
         .service-card:hover .service-icon {
-            background-color: var(--blue-600);
-            color: var(--white);
+            background-color: #2563EB;
+            color: white;
         }
 
         .service-header {
@@ -481,7 +461,7 @@
         .service-card h3 {
             font-size: 18px;
             font-weight: bold;
-            color: var(--gray-900);
+            color: #111827;
         }
 
         .service-card ul {
@@ -492,20 +472,20 @@
             display: flex;
             gap: 8px;
             font-size: 14px;
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 8px;
         }
 
         .bullet {
-            color: var(--blue-600);
+            color: #2563EB;
             font-weight: bold;
             margin-top: 2px;
         }
 
         /* Why Us Section */
         .why-us {
-            padding: 128px 24px;
-            background-color: var(--white);
+            padding: 80px 24px;
+            background-color: white;
         }
 
         .why-grid {
@@ -528,8 +508,8 @@
         }
 
         .why-card {
-            background-color: var(--white);
-            border: 2px solid var(--gray-100);
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 24px;
             transition: all 0.3s;
@@ -537,7 +517,7 @@
         }
 
         .why-card:hover {
-            border-color: var(--blue-600);
+            border-color: #2563EB;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -551,7 +531,7 @@
         .why-card h3 {
             font-size: 18px;
             font-weight: bold;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 16px;
         }
 
@@ -563,7 +543,7 @@
             display: flex;
             gap: 8px;
             font-size: 14px;
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 8px;
         }
 
@@ -580,8 +560,8 @@
         }
 
         .stat-card {
-            background-color: var(--white);
-            border: 2px solid var(--gray-100);
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 32px;
             text-align: center;
@@ -589,26 +569,26 @@
         }
 
         .stat-card:hover {
-            border-color: var(--blue-600);
+            border-color: #2563EB;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
             font-size: 48px;
             font-weight: bold;
-            color: var(--blue-600);
+            color: #2563EB;
             margin-bottom: 8px;
         }
 
         .stat-label {
-            color: var(--gray-600);
+            color: #4B5563;
             font-weight: 600;
         }
 
         /* Testimonials Section */
         .testimonials {
-            padding: 128px 24px;
-            background-color: var(--gray-50);
+            padding: 80px 24px;
+            background-color: #F9FAFB;
         }
 
         .testimonials-grid {
@@ -630,8 +610,8 @@
         }
 
         .testimonial-card {
-            background-color: var(--white);
-            border: 2px solid var(--gray-100);
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 24px;
             transition: all 0.3s;
@@ -639,7 +619,7 @@
         }
 
         .testimonial-card:hover {
-            border-color: var(--blue-600);
+            border-color: #2563EB;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -659,7 +639,7 @@
         }
 
         .testimonial-card p {
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 16px;
             font-style: italic;
             font-size: 14px;
@@ -677,18 +657,18 @@
         }
 
         .testimonial-author {
-            color: var(--gray-900);
+            color: #111827;
             font-weight: bold;
         }
 
         .testimonial-company {
-            color: var(--blue-600);
+            color: #2563EB;
         }
 
         /* Contact Section */
         .contact {
-            padding: 128px 24px;
-            background-color: var(--white);
+            padding: 80px 24px;
+            background-color: white;
         }
 
         .contact-grid {
@@ -705,8 +685,8 @@
         }
 
         .contact-card {
-            background-color: var(--white);
-            border: 2px solid var(--gray-100);
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 24px;
             text-align: center;
@@ -714,13 +694,13 @@
         }
 
         .contact-card:hover {
-            border-color: var(--blue-600);
+            border-color: #2563EB;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact-card i {
             font-size: 40px;
-            color: var(--blue-600);
+            color: #2563EB;
             margin-bottom: 16px;
             transition: transform 0.3s;
         }
@@ -732,7 +712,7 @@
         .contact-card h3 {
             font-size: 18px;
             font-weight: bold;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 12px;
         }
 
@@ -744,17 +724,17 @@
             display: flex;
             gap: 8px;
             font-size: 14px;
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 8px;
             justify-content: center;
         }
 
         .cta-banner {
-            background: linear-gradient(to right, var(--blue-600), var(--blue-800));
+            background: linear-gradient(to right, #2563EB, #1E40AF);
             border-radius: 8px;
             padding: 48px;
             text-align: center;
-            color: var(--white);
+            color: white;
             animation: slideInUp 0.7s ease-out;
         }
 
@@ -796,7 +776,7 @@
 
         .footer-title {
             font-weight: bold;
-            color: var(--white);
+            color: white;
             margin-bottom: 16px;
             font-size: 18px;
         }
@@ -808,7 +788,7 @@
 
         .footer-grid h4 {
             font-weight: bold;
-            color: var(--white);
+            color: white;
             margin-bottom: 16px;
         }
 
@@ -828,7 +808,7 @@
         }
 
         .footer-grid a:hover {
-            color: var(--white);
+            color: white;
         }
 
         .footer-bottom {
@@ -918,9 +898,7 @@
                 <p>Six core service areas covering all aspects of enterprise IT infrastructure and security</p>
             </div>
             
-            <div class="services-grid" id="servicesGrid">
-                <!-- Services will be populated by JS -->
-            </div>
+            <div class="services-grid" id="servicesGrid"></div>
         </div>
     </section>
 
@@ -932,9 +910,7 @@
                 <p>Enterprise-grade expertise with proven results</p>
             </div>
 
-            <div class="why-grid" id="whyGrid">
-                <!-- Why items will be populated by JS -->
-            </div>
+            <div class="why-grid" id="whyGrid"></div>
 
             <div class="stats-grid">
                 <div class="stat-card">
@@ -961,9 +937,7 @@
                 <p>What enterprise leaders say about SYSNETIX</p>
             </div>
 
-            <div class="testimonials-grid" id="testimonialsGrid">
-                <!-- Testimonials will be populated by JS -->
-            </div>
+            <div class="testimonials-grid" id="testimonialsGrid"></div>
         </div>
     </section>
 
@@ -1052,7 +1026,6 @@
     </footer>
 
     <script>
-        // Data
         const servicesData = [
             {
                 icon: 'fa-cloud',
@@ -1139,7 +1112,6 @@
             mobileMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -1163,7 +1135,6 @@
 
         typeText();
 
-        // Type description after main text is done
         setTimeout(() => {
             let descIndex = 0;
             const typeDesc = () => {
@@ -1176,10 +1147,9 @@
             typeDesc();
         }, fullText.length * 50);
 
-        // Render Services
         function renderServices() {
             const servicesGrid = document.getElementById('servicesGrid');
-            servicesGrid.innerHTML = servicesData.map((service, index) => `
+            servicesGrid.innerHTML = servicesData.map((service) => `
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
@@ -1199,10 +1169,9 @@
             `).join('');
         }
 
-        // Render Why Choose Us
         function renderWhyChoose() {
             const whyGrid = document.getElementById('whyGrid');
-            whyGrid.innerHTML = whyChooseData.map((item, index) => `
+            whyGrid.innerHTML = whyChooseData.map((item) => `
                 <div class="why-card">
                     <h3>${item.title}</h3>
                     <ul>
@@ -1217,10 +1186,9 @@
             `).join('');
         }
 
-        // Render Testimonials
         function renderTestimonials() {
             const testimonialsGrid = document.getElementById('testimonialsGrid');
-            testimonialsGrid.innerHTML = testimonialData.map((testimonial, index) => `
+            testimonialsGrid.innerHTML = testimonialData.map((testimonial) => `
                 <div class="testimonial-card">
                     <div class="stars">
                         ${[...Array(5)].map(() => '<div class="star">★</div>').join('')}
@@ -1240,7 +1208,6 @@
             `).join('');
         }
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             renderServices();
             renderWhyChoose();
