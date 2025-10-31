@@ -412,13 +412,13 @@
         .section-header h2 {
             font-size: 36px;
             font-weight: bold;
-            color: #4169E1;
+            color: #FFD700;
             margin-bottom: 16px;
         }
 
         .section-header p {
             font-size: 18px;
-            color: #FFD700;
+            color: #FFFFFF;
             max-width: 768px;
             margin: 0 auto;
         }
@@ -596,8 +596,8 @@
         }
 
         .stat-card {
-            background-color: #2C4CB8;
-            border: 2px solid #FFD700;
+            background: #2C4CB8 !important;
+            border: 2px solid #FFD700 !important;
             border-radius: 8px;
             padding: 32px;
             text-align: center;
@@ -605,19 +605,19 @@
         }
 
         .stat-card:hover {
-            border-color: #DC143C;
-            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3);
+            border-color: #DC143C !important;
+            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
         }
 
         .stat-number {
             font-size: 48px;
             font-weight: bold;
-            color: #FFD700;
+            color: #FFD700 !important;
             margin-bottom: 8px;
         }
 
         .stat-label {
-            color: #FFFFFF;
+            color: #FFFFFF !important;
             font-weight: 600;
         }
 
@@ -854,6 +854,47 @@
             color: #FFFFFF;
             font-size: 14px;
         }
+
+        /* FORCE Why Us Section Colors */
+        #why-us {
+            background-color: #4169E1 !important;
+        }
+
+        #why-us .why-card {
+            background-color: #2C4CB8 !important;
+            background: #2C4CB8 !important;
+            border-color: #FFD700 !important;
+        }
+
+        #why-us .why-card h3 {
+            color: #FFD700 !important;
+        }
+
+        #why-us .why-card li {
+            color: #FFFFFF !important;
+        }
+
+        #why-us .stat-card {
+            background-color: #2C4CB8 !important;
+            background: #2C4CB8 !important;
+            border-color: #FFD700 !important;
+        }
+
+        #why-us .stat-number {
+            color: #FFD700 !important;
+        }
+
+        #why-us .stat-label {
+            color: #FFFFFF !important;
+        }
+
+        #why-us .section-header h2 {
+            color: #FFD700 !important;
+        }
+
+        #why-us .section-header p {
+            color: #FFFFFF !important;
+        }
     </style>
 </head>
 <body>
@@ -943,7 +984,7 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section id="why-us" class="why-us">
+    <section id="why-us" class="why-us" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose SYSNETIX</h2>
@@ -953,15 +994,15 @@
             <div class="why-grid" id="whyGrid"></div>
 
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">99.9%</div>
                     <p class="stat-label">Uptime SLA</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">15 min</div>
                     <p class="stat-label">Response Time</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">1000+</div>
                     <p class="stat-label">Enterprise Clients</p>
                 </div>
