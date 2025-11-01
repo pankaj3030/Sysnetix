@@ -88,26 +88,50 @@
         }
 
         .logo-box {
-            display: none;
+            display: none !important;
+        }
+
+        .logo img[src="logo.png"]:not([src]) ~ .logo-box {
+            display: flex !important;
         }
 
         .logo-image {
-            max-width: 200px;
+            width: 200px;
             height: auto;
-            width: auto;
-            max-height: 50px;
+            object-fit: contain;
+            max-width: 100%;
         }
 
         .logo-text {
             display: none !important;
+            visibility: hidden !important;
         }
 
         .company-name {
             display: none !important;
+            visibility: hidden !important;
         }
 
         .tagline {
             display: none !important;
+            visibility: hidden !important;
+        }
+
+        .company-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #FFD700;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 640px) {
+            .logo-text {
+                display: block;
+            }
         }
 
         .nav-links {
@@ -209,9 +233,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%234169E1"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
             padding: 80px 24px;
             position: relative;
             overflow: hidden;
@@ -219,6 +241,27 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+            z-index: 2;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
         }
 
         .hero-grid {
@@ -248,7 +291,7 @@
         .typing-text {
             font-size: 48px;
             font-weight: bold;
-            color: #FFD700;
+            color: #111827;
             margin-bottom: 24px;
             line-height: 1.2;
             min-height: 96px;
@@ -262,20 +305,20 @@
 
         .cursor {
             display: inline-block;
-            border-right: 3px solid #FFD700;
+            border-right: 3px solid #2563EB;
             animation: blink 1s infinite;
             margin-left: 2px;
         }
 
         .hero-desc {
             font-size: 18px;
-            color: #FFD700;
+            color: #374151;
             margin-bottom: 16px;
             min-height: 48px;
         }
 
         .hero-subtitle {
-            color: #FFD700;
+            color: #4B5563;
             margin-bottom: 32px;
         }
 
@@ -334,7 +377,7 @@
         }
 
         .btn-white:hover {
-            background-color: #FFC700;
+            background-color: #F3F4F6;
         }
 
         .hero-visual {
@@ -353,20 +396,22 @@
         }
 
         .rocket-emoji {
-            font-size: 80px;
+            font-size: 56px;
             margin-bottom: 16px;
-            animation: float 3s ease-in-out infinite;
+            display: none;
         }
 
         .enterprise-text {
-            color: #FFD700;
+            color: #4169E1;
             font-size: 24px;
             font-weight: bold;
+            display: none;
         }
 
         .clients-text {
-            color: #FFFFFF;
+            color: #4169E1;
             margin-top: 16px;
+            display: none;
         }
 
         /* Section Headers */
@@ -426,7 +471,6 @@
         .service-card:hover {
             border-color: #DC143C;
             box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3);
-            transform: translateY(-5px);
         }
 
         .service-card:nth-child(1) { animation-delay: 0.05s; }
@@ -489,7 +533,7 @@
         /* Why Us Section */
         .why-us {
             padding: 80px 24px;
-            background-color: #4169E1 !important;
+            background-color: white;
         }
 
         .why-grid {
@@ -512,8 +556,8 @@
         }
 
         .why-card {
-            background-color: #2C4CB8 !important;
-            border: 2px solid #FFD700 !important;
+            background-color: white;
+            border: 2px solid #F3F4F6;
             border-radius: 8px;
             padding: 24px;
             transition: all 0.3s;
@@ -522,8 +566,7 @@
 
         .why-card:hover {
             border-color: #DC143C;
-            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3);
-            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .why-card:nth-child(1) { animation-delay: 0.05s; }
@@ -536,7 +579,7 @@
         .why-card h3 {
             font-size: 18px;
             font-weight: bold;
-            color: #FFD700 !important;
+            color: #111827;
             margin-bottom: 16px;
         }
 
@@ -548,7 +591,7 @@
             display: flex;
             gap: 8px;
             font-size: 14px;
-            color: #FFFFFF !important;
+            color: #374151;
             margin-bottom: 8px;
         }
 
@@ -576,7 +619,6 @@
         .stat-card:hover {
             border-color: #DC143C !important;
             box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
-            transform: translateY(-5px);
         }
 
         .stat-number {
@@ -594,7 +636,7 @@
         /* Testimonials Section */
         .testimonials {
             padding: 80px 24px;
-            background-color: #4169E1;
+            background-color: #ffffff;
         }
 
         .testimonials-grid {
@@ -627,7 +669,6 @@
         .testimonial-card:hover {
             border-color: #DC143C;
             box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3);
-            transform: translateY(-5px);
         }
 
         .testimonial-card:nth-child(1) { animation-delay: 0.05s; }
@@ -645,11 +686,48 @@
             font-size: 20px !important;
         }
 
+        .testimonial-card ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .testimonial-card li {
+            list-style: none !important;
+            display: block !important;
+            margin-bottom: 8px !important;
+            padding: 0 !important;
+        }
+
+        .testimonial-card li:first-child {
+            color: #FFD700 !important;
+            font-weight: bold !important;
+        }
+
+        .testimonial-card li:last-child {
+            color: #FFFFFF !important;
+        }
+
+        .testimonial-card .bullet {
+            display: none !important;
+        }
+
         .testimonial-card p {
             color: #FFFFFF;
             margin-bottom: 16px;
             font-style: italic;
             font-size: 14px;
+        }
+
+        .testimonial-card ul {
+            list-style: none;
+        }
+
+        .testimonial-card li {
+            display: flex;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 8px;
         }
 
         .testimonial-author {
@@ -664,7 +742,7 @@
         /* Contact Section */
         .contact {
             padding: 80px 24px;
-            background-color: #4169E1;
+            background-color: #ffffff;
         }
 
         .contact-grid {
@@ -692,7 +770,6 @@
         .contact-card:hover {
             border-color: #DC143C;
             box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3);
-            transform: translateY(-5px);
         }
 
         .contact-card i {
@@ -718,9 +795,12 @@
         }
 
         .contact-card li {
+            display: flex;
+            gap: 8px;
             font-size: 14px;
             color: #FFFFFF;
             margin-bottom: 8px;
+            justify-content: center;
         }
 
         .cta-banner {
@@ -736,7 +816,6 @@
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 16px;
-            color: #111827;
         }
 
         .cta-banner p {
@@ -745,7 +824,7 @@
             max-width: 512px;
             margin-left: auto;
             margin-right: auto;
-            color: #111827;
+            color: #4169E1;
         }
 
         /* Footer */
@@ -813,6 +892,45 @@
             color: #FFFFFF;
             font-size: 14px;
         }
+
+        /* FORCE Why Us Section Colors */
+        #why-us {
+            background-color: #4169E1 !important;
+        }
+
+        #why-us .why-card {
+            background-color: #2C4CB8 !important;
+            background: #2C4CB8 !important;
+            border-color: #FFD700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        #why-us .why-card:hover {
+            border-color: #DC143C !important;
+            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
+            transform: translateY(-5px) !important;
+        }
+
+        #why-us .stat-card {
+            background-color: #2C4CB8 !important;
+            background: #2C4CB8 !important;
+            border-color: #FFD700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        #why-us .stat-card:hover {
+            border-color: #DC143C !important;
+            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
+            transform: translateY(-5px) !important;
+        }
+
+        #why-us .section-header h2 {
+            color: #FFD700 !important;
+        }
+
+        #why-us .section-header p {
+            color: #FFFFFF !important;
+        }
     </style>
 </head>
 <body>
@@ -821,7 +939,11 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="logo.png" alt="SYSNETIX Logo" class="logo-image">
+                    <div class="logo-box">S</div>
+                    <div class="logo-text">
+                        <div class="company-name">SYSNETIX</div>
+                        <div class="tagline">Enterprise Solutions</div>
+                    </div>
                 </div>
                 
                 <div class="nav-links">
@@ -853,14 +975,18 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
                     <h1 class="typing-text">
-                        <span id="typingText"></span><span class="cursor">|</span>
+                        <span id="typingText" style="color: #FFD700;"></span><span class="cursor" style="color: #FFD700;">|</span>
                     </h1>
-                    <p id="typingDesc" class="hero-desc"></p>
-                    <p class="hero-subtitle">Comprehensive support across cloud platforms, virtualization, networking, infrastructure, and cybersecurity.</p>
+                    <p id="typingDesc" class="hero-desc" style="color: #FFD700;"></p>
+                    <p class="hero-subtitle" style="color: #FFD700;">Comprehensive support across cloud platforms, virtualization, networking, infrastructure, and cybersecurity.</p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary">
                             Schedule Consultation <i class="fas fa-arrow-right"></i>
@@ -868,10 +994,12 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="hero-content-box">
-                        <div class="rocket-emoji">🚀</div>
-                        <p class="enterprise-text">Enterprise Power</p>
-                        <p class="clients-text">Trusted by 1000+ Organizations</p>
+                    <div class="hero-box">
+                        <div class="hero-content-box">
+                            <div class="rocket-emoji">🚀</div>
+                            <p class="enterprise-text">Enterprise Power</p>
+                            <p class="clients-text">Trusted by 1000+ Organizations</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -891,25 +1019,25 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section id="why-us" class="why-us">
+    <section id="why-us" class="why-us" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose SYSNETIX</h2>
-                <p>Enterprise-grade expertise with proven results</p>
+                <h2 style="color: #FFD700 !important;">Why Choose SYSNETIX</h2>
+                <p style="color: #FFFFFF !important;">Enterprise-grade expertise with proven results</p>
             </div>
 
             <div class="why-grid" id="whyGrid"></div>
 
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">99.9%</div>
                     <p class="stat-label">Uptime SLA</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">15 min</div>
                     <p class="stat-label">Response Time</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
                     <div class="stat-number">1000+</div>
                     <p class="stat-label">Enterprise Clients</p>
                 </div>
@@ -918,11 +1046,11 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Client Success Stories</h2>
-                <p>What enterprise leaders say about SYSNETIX</p>
+                <h2 style="color: #FFD700 !important;">Client Success Stories</h2>
+                <p style="color: #FFFFFF !important;">What enterprise leaders say about SYSNETIX</p>
             </div>
 
             <div class="testimonials-grid" id="testimonialsGrid"></div>
@@ -930,39 +1058,39 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Connect with our team today</p>
+                <h2 style="color: #FFD700 !important;">Get In Touch</h2>
+                <p style="color: #FFFFFF !important;">Connect with our team today</p>
             </div>
             
             <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
-                    <ul>
-                        <li>+1 (555) 123-4567</li>
-                        <li>Available 24/7</li>
+                <div class="contact-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
+                    <i class="fas fa-phone" style="color: #FFD700 !important;"></i>
+                    <h3 style="color: #FFD700 !important;">Phone</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #FFFFFF !important; margin-bottom: 8px;">+1 (555) 123-4567</li>
+                        <li style="color: #FFFFFF !important;">Available 24/7</li>
                     </ul>
                 </div>
 
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <ul>
-                        <li>solutions@sysnetix.com</li>
-                        <li>Response within 1 hour</li>
+                <div class="contact-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
+                    <i class="fas fa-envelope" style="color: #FFD700 !important;"></i>
+                    <h3 style="color: #FFD700 !important;">Email</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #FFFFFF !important; margin-bottom: 8px;">solutions@sysnetix.com</li>
+                        <li style="color: #FFFFFF !important;">Response within 1 hour</li>
                     </ul>
                 </div>
 
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Office</h3>
-                    <ul>
-                        <li>111 New Union Street</li>
-                        <li>Union House, Coventry</li>
-                        <li>CV1 2NT</li>
+                <div class="contact-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
+                    <i class="fas fa-map-marker-alt" style="color: #FFD700 !important;"></i>
+                    <h3 style="color: #FFD700 !important;">Office</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #FFFFFF !important; margin-bottom: 8px;">111 New Union Street</li>
+                        <li style="color: #FFFFFF !important; margin-bottom: 8px;">Union House, Coventry</li>
+                        <li style="color: #FFFFFF !important;">CV1 2NT</li>
                     </ul>
                 </div>
             </div>
@@ -980,3 +1108,228 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
+                    <div class="footer-title">SYSNETIX</div>
+                    <p>Enterprise IT solutions for organizations that demand excellence in security, performance, and reliability.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Cloud Support</a></li>
+                        <li><a href="#services">MS365 Support</a></li>
+                        <li><a href="#services">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SYSNETIX Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const servicesData = [
+            {
+                icon: 'fa-cloud',
+                title: "Cloud Support",
+                features: ["AWS Management", "Azure Administration", "GCP Solutions", "Cloud Migration", "Cost Optimization"]
+            },
+            {
+                icon: 'fa-globe',
+                title: "MS365 Support",
+                features: ["Teams Administration", "Exchange Management", "SharePoint Governance", "OneDrive Support", "Security Configuration"]
+            },
+            {
+                icon: 'fa-server',
+                title: "Citrix Solutions",
+                features: ["VDI Deployment", "App Streaming", "Session Management", "Performance Tuning", "User Experience Optimization"]
+            },
+            {
+                icon: 'fa-wifi',
+                title: "Network Support",
+                features: ["Network Design", "Firewall Management", "VPN Solutions", "Network Monitoring", "Bandwidth Optimization"]
+            },
+            {
+                icon: 'fa-hard-drive',
+                title: "Hardware Support",
+                features: ["Server Management", "Workstation Support", "Storage Solutions", "Backup Systems", "Hardware Refresh"]
+            },
+            {
+                icon: 'fa-lock',
+                title: "Cyber Security",
+                features: ["Threat Detection", "Vulnerability Assessment", "Incident Response", "Security Compliance", "Security Awareness"]
+            }
+        ];
+
+        const whyChooseData = [
+            { 
+                title: "99.9% SLA Guarantee", 
+                features: ["Backed by transparent SLA terms", "Proactive monitoring", "Guaranteed uptime"] 
+            },
+            { 
+                title: "Rapid Response", 
+                features: ["15-minute response time", "Critical incident support", "24/7 availability"] 
+            },
+            { 
+                title: "Enterprise Security", 
+                features: ["Military-grade encryption", "Compliance standards", "Regular audits"] 
+            },
+            { 
+                title: "Expert Team", 
+                features: ["Certified professionals", "Industry expertise", "Continuous training"] 
+            },
+            { 
+                title: "24/7 Monitoring", 
+                features: ["AI-powered monitoring", "Proactive alerts", "Issue prevention"] 
+            },
+            { 
+                title: "Strategic Planning", 
+                features: ["Technology roadmap", "Business alignment", "Future-ready solutions"] 
+            }
+        ];
+
+        const testimonialData = [
+            { 
+                company: "Tech Corp", 
+                quote: "SYSNETIX transformed our cloud infrastructure with 40% cost savings.", 
+                author: "John Smith, CTO" 
+            },
+            { 
+                company: "Enterprise Inc", 
+                quote: "24/7 support has been critical to our business continuity.", 
+                author: "Sarah Johnson, IT Director" 
+            },
+            { 
+                company: "Global Solutions", 
+                quote: "Expert team provided seamless migration to Azure.", 
+                author: "Mike Brown, Infrastructure Lead" 
+            }
+        ];
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Typing Effect
+        const fullText = 'Complete IT Infrastructure Solutions';
+        const fullDesc = 'Enterprise-grade services across cloud, security, networking, and infrastructure management.';
+        const typingTextEl = document.getElementById('typingText');
+        const typingDescEl = document.getElementById('typingDesc');
+
+        let textIndex = 0;
+        const typeText = () => {
+            if (textIndex <= fullText.length) {
+                typingTextEl.textContent = fullText.slice(0, textIndex);
+                textIndex++;
+                setTimeout(typeText, 50);
+            }
+        };
+
+        typeText();
+
+        setTimeout(() => {
+            let descIndex = 0;
+            const typeDesc = () => {
+                if (descIndex <= fullDesc.length) {
+                    typingDescEl.textContent = fullDesc.slice(0, descIndex);
+                    descIndex++;
+                    setTimeout(typeDesc, 30);
+                }
+            };
+            typeDesc();
+        }, fullText.length * 50);
+
+        function renderServices() {
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = servicesData.map((service) => `
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas ${service.icon}"></i>
+                        </div>
+                        <h3>${service.title}</h3>
+                    </div>
+                    <ul>
+                        ${service.features.map(feature => `
+                            <li>
+                                <span class="bullet">•</span>
+                                <span>${feature}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        function renderWhyChoose() {
+            const whyGrid = document.getElementById('whyGrid');
+            whyGrid.innerHTML = whyChooseData.map((item) => `
+                <div class="why-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
+                    <h3 style="color: #FFD700 !important; font-size: 18px !important; font-weight: bold !important; margin-bottom: 16px !important;">${item.title}</h3>
+                    <ul>
+                        ${item.features.map(feature => `
+                            <li style="color: #FFFFFF !important; display: flex !important; gap: 8px !important; font-size: 14px !important; margin-bottom: 8px !important;">
+                                <span class="bullet" style="color: #DC143C !important; font-weight: bold !important; margin-top: 2px !important;">•</span>
+                                <span style="color: #FFFFFF !important;">${feature}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        function renderTestimonials() {
+            const testimonialsGrid = document.getElementById('testimonialsGrid');
+            testimonialsGrid.innerHTML = testimonialData.map((testimonial) => `
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ${[...Array(5)].map(() => '<div class="star">★</div>').join('')}
+                    </div>
+                    <p>"${testimonial.quote}"</p>
+                    <ul>
+                        <li>
+                            <span class="bullet">•</span>
+                            <span class="testimonial-author">${testimonial.author}</span>
+                        </li>
+                        <li>
+                            <span class="bullet">•</span>
+                            <span class="testimonial-company">${testimonial.company}</span>
+                        </li>
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+            renderWhyChoose();
+            renderTestimonials();
+        });
+    </script>
+</body>
+</html>
