@@ -87,6 +87,10 @@
             animation: slideInLeft 0.7s ease-out;
         }
 
+        .logo-box {
+            display: none !important;
+        }
+
         .logo-image {
             width: 200px;
             height: auto;
@@ -1133,6 +1137,18 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Debug logo loading
+        window.addEventListener('load', () => {
+            const logoImg = document.querySelector('.logo-image');
+            if (logoImg) {
+                console.log('Logo image element found');
+                console.log('Logo src:', logoImg.src);
+                console.log('Logo loaded:', logoImg.complete && logoImg.naturalWidth > 0);
+            }
+        });
+    </script>
 
     <script>
         const servicesData = [
