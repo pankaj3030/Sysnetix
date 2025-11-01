@@ -1143,54 +1143,6 @@
     </footer>
 
     <script>
-        // Try to load logo from different paths
-        window.addEventListener('load', () => {
-            const logoImg = document.querySelector('.logo-image');
-            const logoContainer = document.getElementById('logoContainer');
-            
-            // Log current path info
-            console.log('Current URL:', window.location.href);
-            console.log('Logo src:', logoImg.src);
-            
-            // Test if logo loads
-            logoImg.addEventListener('error', () => {
-                console.log('Logo failed to load from:', logoImg.src);
-                // Try alternative paths
-                const alternatives = [
-                    './logo.png',
-                    '/Sysnetix/logo.png',
-                    'https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png'
-                ];
-                
-                for (let alt of alternatives) {
-                    const testImg = new Image();
-                    testImg.onload = () => {
-                        console.log('Logo loaded successfully from:', alt);
-                        logoImg.src = alt;
-                    };
-                    testImg.src = alt;
-                }
-            });
-            
-            logoImg.addEventListener('load', () => {
-                console.log('Logo loaded successfully from:', logoImg.src);
-            });
-        });
-    </script>
-
-    <script>
-        // Debug logo loading
-        window.addEventListener('load', () => {
-            const logoImg = document.querySelector('.logo-image');
-            if (logoImg) {
-                console.log('Logo image element found');
-                console.log('Logo src:', logoImg.src);
-                console.log('Logo loaded:', logoImg.complete && logoImg.naturalWidth > 0);
-            }
-        });
-    </script>
-
-    <script>
         const servicesData = [
             {
                 icon: 'fa-cloud',
