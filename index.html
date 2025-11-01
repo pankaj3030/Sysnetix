@@ -20,7 +20,6 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #FFD700;
             background-color: #ffffff !important;
         }
 
@@ -864,28 +863,26 @@
             background-color: #2C4CB8 !important;
             background: #2C4CB8 !important;
             border-color: #FFD700 !important;
+            transition: all 0.3s ease !important;
         }
 
-        #why-us .why-card h3 {
-            color: #FFD700 !important;
-        }
-
-        #why-us .why-card li {
-            color: #FFFFFF !important;
+        #why-us .why-card:hover {
+            border-color: #DC143C !important;
+            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
+            transform: translateY(-5px) !important;
         }
 
         #why-us .stat-card {
             background-color: #2C4CB8 !important;
             background: #2C4CB8 !important;
             border-color: #FFD700 !important;
+            transition: all 0.3s ease !important;
         }
 
-        #why-us .stat-number {
-            color: #FFD700 !important;
-        }
-
-        #why-us .stat-label {
-            color: #FFFFFF !important;
+        #why-us .stat-card:hover {
+            border-color: #DC143C !important;
+            box-shadow: 0 10px 15px rgba(255, 215, 0, 0.3) !important;
+            transform: translateY(-5px) !important;
         }
 
         #why-us .section-header h2 {
@@ -987,8 +984,8 @@
     <section id="why-us" class="why-us" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose SYSNETIX</h2>
-                <p>Enterprise-grade expertise with proven results</p>
+                <h2 style="color: #FFD700 !important;">Why Choose SYSNETIX</h2>
+                <p style="color: #FFFFFF !important;">Enterprise-grade expertise with proven results</p>
             </div>
 
             <div class="why-grid" id="whyGrid"></div>
@@ -1011,11 +1008,11 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Client Success Stories</h2>
-                <p>What enterprise leaders say about SYSNETIX</p>
+                <h2 style="color: #FFD700 !important;">Client Success Stories</h2>
+                <p style="color: #FFFFFF !important;">What enterprise leaders say about SYSNETIX</p>
             </div>
 
             <div class="testimonials-grid" id="testimonialsGrid"></div>
@@ -1023,11 +1020,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" style="background-color: #4169E1 !important;">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Connect with our team today</p>
+                <h2 style="color: #FFD700 !important;">Get In Touch</h2>
+                <p style="color: #FFFFFF !important;">Connect with our team today</p>
             </div>
             
             <div class="contact-grid">
@@ -1253,13 +1250,13 @@
         function renderWhyChoose() {
             const whyGrid = document.getElementById('whyGrid');
             whyGrid.innerHTML = whyChooseData.map((item) => `
-                <div class="why-card">
-                    <h3>${item.title}</h3>
+                <div class="why-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
+                    <h3 style="color: #FFD700 !important; font-size: 18px !important; font-weight: bold !important; margin-bottom: 16px !important;">${item.title}</h3>
                     <ul>
                         ${item.features.map(feature => `
-                            <li>
-                                <span class="bullet">•</span>
-                                <span>${feature}</span>
+                            <li style="color: #FFFFFF !important; display: flex !important; gap: 8px !important; font-size: 14px !important; margin-bottom: 8px !important;">
+                                <span class="bullet" style="color: #DC143C !important; font-weight: bold !important; margin-top: 2px !important;">•</span>
+                                <span style="color: #FFFFFF !important;">${feature}</span>
                             </li>
                         `).join('')}
                     </ul>
