@@ -1,3 +1,8 @@
+Okay, I will integrate the Calendly badge widget into the provided HTML code. The widget code needs to be added just before the closing `</body>` tag, after the existing script tag that links to `script.js`.
+
+Here is the updated HTML file:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,5 +193,19 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <!-- Calendly badge widget begin -->
+    <script type="text/javascript">
+        window.onload = function() {
+            Calendly.initBadgeWidget({
+                url: 'https://calendly.com/ipankajmehndiratta/30min',
+                text: 'Schedule time with me',
+                color: '#0069ff',
+                textColor: '#ffffff',
+                branding: true
+            });
+        };
+    </script>
+    <!-- Calendly badge widget end -->
 </body>
 </html>
+```
