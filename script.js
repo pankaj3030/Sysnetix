@@ -1,3 +1,4 @@
+// Data for dynamic sections
 const servicesData = [
     {
         icon: 'fa-cloud',
@@ -30,6 +31,7 @@ const servicesData = [
         features: ["Threat Detection", "Vulnerability Assessment", "Incident Response", "Security Compliance", "Security Awareness"]
     }
 ];
+
 const whyChooseData = [
     {
         title: "99.9% SLA Guarantee",
@@ -56,6 +58,7 @@ const whyChooseData = [
         features: ["Technology roadmap", "Business alignment", "Future-ready solutions"]
     }
 ];
+
 const testimonialData = [
     {
         company: "Tech Corp",
@@ -73,6 +76,7 @@ const testimonialData = [
         author: "Mike Brown, Infrastructure Lead"
     }
 ];
+
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -84,7 +88,8 @@ mobileMenu.querySelectorAll('a').forEach(link => {
         mobileMenu.classList.remove('active');
     });
 });
-// Typing Effect
+
+// Typing Effect for Hero
 const fullText = 'Complete IT Infrastructure Solutions';
 const fullDesc = 'Enterprise-grade solutions in cloud, security, networking, and infrastructure.';
 const typingTextEl = document.getElementById('typingText');
@@ -109,10 +114,12 @@ setTimeout(() => {
     };
     typeDesc();
 }, fullText.length * 50);
+
+// Render Functions
 function renderServices() {
     const servicesGrid = document.getElementById('servicesGrid');
-    servicesGrid.innerHTML = servicesData.map((service) => `
-        <div class="service-card">
+    servicesGrid.innerHTML = servicesData.map((service, index) => `
+        <div class="service-card" style="animation-delay: ${0.05 * (index + 1)}s;">
             <div class="service-header">
                 <div class="service-icon">
                     <i class="fas ${service.icon}"></i>
@@ -130,26 +137,28 @@ function renderServices() {
         </div>
     `).join('');
 }
+
 function renderWhyChoose() {
     const whyGrid = document.getElementById('whyGrid');
-    whyGrid.innerHTML = whyChooseData.map((item) => `
-        <div class="why-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
-            <h3 style="color: #FFD700 !important; font-size: 18px !important; font-weight: bold !important; margin-bottom: 16px !important;">${item.title}</h3>
+    whyGrid.innerHTML = whyChooseData.map((item, index) => `
+        <div class="why-card" style="animation-delay: ${0.05 * (index + 1)}s;">
+            <h3>${item.title}</h3>
             <ul>
                 ${item.features.map(feature => `
-                    <li style="color: #FFFFFF !important; display: flex !important; gap: 8px !important; font-size: 14px !important; margin-bottom: 8px !important;">
-                        <span class="bullet" style="color: #DC143C !important; font-weight: bold !important; margin-top: 2px !important;">•</span>
-                        <span style="color: #FFFFFF !important;">${feature}</span>
+                    <li>
+                        <span class="bullet">•</span>
+                        <span>${feature}</span>
                     </li>
                 `).join('')}
             </ul>
         </div>
     `).join('');
 }
+
 function renderTestimonials() {
     const testimonialsGrid = document.getElementById('testimonialsGrid');
-    testimonialsGrid.innerHTML = testimonialData.map((testimonial) => `
-        <div class="testimonial-card">
+    testimonialsGrid.innerHTML = testimonialData.map((testimonial, index) => `
+        <div class="testimonial-card" style="animation-delay: ${0.05 * (index + 1)}s;">
             <div class="stars">
                 ${[...Array(5)].map(() => '<div class="star">★</div>').join('')}
             </div>
@@ -167,6 +176,8 @@ function renderTestimonials() {
         </div>
     `).join('');
 }
+
+// Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
     renderServices();
     renderWhyChoose();
