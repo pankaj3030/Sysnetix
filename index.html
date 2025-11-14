@@ -1,250 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SYSNETIX — Enterprise IT Infrastructure Solutions</title>
-  <meta name="description" content="Enterprise IT infrastructure, cloud, and cybersecurity services. Managed support, migrations, monitoring and more." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Infrastructure Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ===== Theme variables ===== */
-    :root{
-      --bg: #ffffff;
-      --page-bg: linear-gradient(180deg,#f7fbff,#eef5ff);
-      --primary: #2d67ff;      /* Royal Blue */
-      --accent: #ffd700;       /* Gold */
-      --danger: #dc143c;       /* Crimson */
-      --muted: #6b7280;
-      --card-bg: #ffffff;
-      --glass: rgba(255,255,255,0.6);
-      --radius: 12px;
-      --max-width: 1200px;
-      --shadow-sm: 0 4px 12px rgba(22,27,32,0.06);
-      --shadow-md: 0 18px 40px rgba(22,27,32,0.08);
-      --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--ff);margin:0;color:#0f1724;background:var(--page-bg);-webkit-font-smoothing:antialiased}
-    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;height:auto;display:block}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    /* ===== Header ===== */
-    .navbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--max-width);margin:0 auto;padding:0 20px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:160px}
-    .nav-links{display:none;gap:12px;align-items:center}
-    .nav-links a{color:var(--muted);padding:8px 12px;border-radius:8px;font-weight:600}
-    .nav-links a:hover{color:var(--primary);background:rgba(45,103,255,0.06)}
-    .cta{background:var(--accent);color:#0b1020;padding:10px 18px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(255,215,0,0.12)}
-    .menu-btn{display:inline-flex;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
-    @media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #0c2d6e, #08306a);
+      color: white;
+      padding: 80px 20px;
+      text-align: left;
+      position: relative;
+    }
 
-    /* ===== Hero ===== */
-    .hero{min-height:78vh;display:flex;align-items:center;padding:80px 0;position:relative;overflow:hidden}
-    .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.45;pointer-events:none}
-    .hero-bg{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(45,103,255,0.06),rgba(220,20,60,0.02));z-index:1}
-    .shape{position:absolute;border-radius:50%;filter:blur(18px);opacity:0.35}
-    .s1{width:260px;height:260px;background:var(--primary);left:-80px;top:-40px}
-    .s2{width:160px;height:160px;background:var(--accent);right:-40px;bottom:60px;opacity:0.25}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;position:relative;z-index:2}
-    @media(min-width:960px){.hero-grid{grid-template-columns:1fr 480px}}
-    .hero-left h1{font-size:2.6rem;line-height:1.02;margin:0 0 12px;color:#071032;font-weight:800}
-    .sub{color:var(--muted);font-size:1.05rem;max-width:70ch;margin-bottom:18px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{background:linear-gradient(90deg,var(--primary),#1a4be6);color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:var(--shadow-md);transition:transform .18s ease}
-    .btn-primary:hover{transform:translateY(-3px)}
-    .btn-outline{background:transparent;border:1.5px solid rgba(15,23,36,0.06);padding:10px 16px;border-radius:10px;color:var(--muted);font-weight:600}
-    .typing{font-weight:700;color:var(--primary);display:inline-block;border-right:3px solid var(--primary);white-space:nowrap;overflow:hidden}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
 
-    /* Hero card */
-    .hero-card{background:linear-gradient(180deg,#ffffff, #f7fbff);border-radius:16px;padding:22px;box-shadow:var(--shadow-md);border:1px solid rgba(13,16,22,0.04)}
-    .hero-card .stat{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-    .hero-card .stat strong{font-size:1.25rem;color:var(--primary)}
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
 
-    /* Sections */
-    section{padding:72px 0}
-    .section-title{text-align:center;margin-bottom:28px}
-    .section-title h2{font-size:1.9rem;margin:0;color:#071032}
-    .section-title p{color:var(--muted);margin-top:10px}
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
 
-    /* Grid layouts */
-    .services-grid,.why-grid,.testimonials-grid,.contact-grid{display:grid;gap:18px;grid-template-columns:repeat(1,1fr)}
-    @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:768px){.why-grid{grid-template-columns:repeat(3,1fr);}.testimonials-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:repeat(3,1fr)}}
+    .btn-primary {
+      background-color: #f0ad4e;
+      color: white;
+      padding: 12px 25px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-    /* Cards */
-    .service-card,.why-card,.testimonial,.contact-card{background:var(--card-bg);padding:22px;border-radius:14px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
-    .service-card:hover,.why-card:hover,.testimonial:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
-    .service-icon{width:52px;height:52px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--primary),#1a4be6);color:white;margin-right:12px}
-    .service-title{display:flex;align-items:center;gap:8px;font-weight:700;color:#071032}
-    .service-list{margin-top:12px;color:var(--muted);font-size:0.95rem}
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      padding: 12px 25px;
+      border: 2px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-    .why-card{background:linear-gradient(180deg,#f8fafc,#fff);padding:20px;border-radius:12px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm)}
-    .why-card h3{margin:0 0 8px}
-    .testimonial{background:linear-gradient(180deg,#ffffff,#f7fbff);padding:18px;border-radius:12px;border:1px solid rgba(13,16,22,0.04);}
-    .stars{color:var(--accent);margin-bottom:8px}
-    .contact-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:20px;border-radius:12px;text-align:center;border:1px solid rgba(13,16,22,0.04)}
+    .hero-stats {
+      background: white;
+      color: #333;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      position: absolute;
+      top: 80px;
+      right: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-    /* sticky CTA */
-    .sticky-cta{position:fixed;right:18px;bottom:18px;background:var(--primary);color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 12px 30px rgba(45,103,255,0.18);z-index:80;display:flex;gap:10px;align-items:center}
+    .hero-stats div {
+      margin-bottom: 10px;
+    }
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .center{text-align:center}
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.show{opacity:1;transform:none}
-    a:focus,button:focus{outline:3px solid rgba(45,103,255,0.16);outline-offset:2px}
+    .hero-stats strong {
+      font-size: 1.5rem;
+      display: block;
+    }
 
-    /* images inside cards */
-    .service-card img,.why-card img,.testimonial img{border-radius:12px;margin-bottom:12px;width:100%;height:160px;object-fit:cover}
+    .hero-stats ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services h2 {
+      color: #d32f2f;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .services p {
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .service-card img, .service-card .icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card ul li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .service-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-stats {
+        position: static;
+        margin-top: 30px;
+        width: 100%;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-<header class="navbar" role="banner">
-  <div class="nav-inner container">
-    <div class="brand">
-      <a href="#home" aria-label="SYSNETIX Home"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo"></a>
-      <div class="visually-hidden" aria-hidden="true">SYSNETIX</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Complete IT Infrastructure Solutions</h1>
+    <p>We deliver secure, scalable and cost-efficient IT solutions – cloud migrations, 24/7 monitoring, managed support and enterprise-grade cybersecurity.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Get a Free Consultation</button>
+      <button class="btn-secondary">Explore Services</button>
     </div>
-    <nav class="nav-links" role="navigation" aria-label="Main">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div style="display:flex;align-items:center;gap:12px">
-      <button class="cta" id="bookBtn">Schedule</button>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-    </div>
-  </div>
-</header>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu" style="display:none;background:white;border-bottom:1px solid rgba(13,16,22,0.04);padding:16px;">
-  <div class="container" style="display:flex;flex-direction:column;gap:8px">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#why-us">Why Us</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-    <button class="cta" style="width:100%;margin-top:6px">Schedule</button>
-  </div>
-</div>
-
-<!-- HERO -->
-<main class="hero" id="home" role="main">
-  <video class="hero-video" autoplay muted loop playsinline poster="poster.jpg" aria-hidden="true">
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="hero-bg"></div>
-  <div class="shape s1" aria-hidden="true"></div>
-  <div class="shape s2" aria-hidden="true"></div>
-
-  <div class="container hero-grid">
-    <div class="hero-left">
-      <h1>Complete <span class="typing" id="typingText">IT Infrastructure Solutions</span></h1>
-      <p class="sub">We deliver secure, scalable and cost-efficient IT solutions — cloud migrations, 24/7 monitoring, managed support and enterprise-grade cybersecurity.</p>
-      <div class="hero-actions">
-        <button class="btn-primary" id="primaryDemo">Get a Free Consultation</button>
-        <a class="btn-outline" href="#services">Explore Services</a>
+    <div class="hero-stats">
+      <div>
+        <strong>1000+</strong>
+        Active Clients
       </div>
-      <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">Trusted by enterprises &middot; ISO-aligned practices &middot; 24/7 support</div>
-    </div>
-
-    <aside class="hero-card" aria-hidden="false">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <div>
-          <div style="font-size:14px;color:var(--muted)">Active Clients</div>
-          <div style="font-weight:800;font-size:20px;color:#071032;">1000+</div>
-        </div>
-        <div>
-          <div style="font-size:14px;color:var(--muted)">Avg. Response</div>
-          <div style="font-weight:800;font-size:20px;color:#071032;">15 min</div>
-        </div>
+      <div>
+        <strong>15 min</strong>
+        Avg. Response
       </div>
-      <div style="border-top:1px solid rgba(13,16,22,0.04);padding-top:12px">
-        <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Featured services</div>
-        <ul style="display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:0;margin:0;color:#0f1724;font-weight:600">
+      <div>
+        Featured services
+        <ul>
           <li>Cloud & migrations</li>
           <li>Cybersecurity</li>
           <li>MS365 & collaboration</li>
           <li>Network & Wi-Fi</li>
         </ul>
       </div>
-    </aside>
-  </div>
-</main>
+    </div>
+  </section>
 
-<!-- Sections for Services, Why Us, Testimonials, Contact remain same as before but now can include images -->
-<!-- I can inject sample image URLs in JS -->
-<script>
-const servicesData = [
-  { icon:'fa-cloud', title:'Cloud Support', img:'https://via.placeholder.com/400x160?text=Cloud', features:['AWS Management','Azure Administration','GCP Solutions','Cloud Migration','Cost Optimization'] },
-  { icon:'fa-globe', title:'MS365 Support', img:'https://via.placeholder.com/400x160?text=MS365', features:['Teams Admin','Exchange Management','SharePoint','OneDrive','Security Configuration'] },
-  { icon:'fa-server', title:'Citrix & VDI', img:'https://via.placeholder.com/400x160?text=VDI', features:['VDI Deployment','App Streaming','Session Management','Performance Tuning','UX'] },
-  { icon:'fa-wifi', title:'Network Support', img:'https://via.placeholder.com/400x160?text=Network', features:['Network Design','Firewall Management','VPNs','Monitoring','Bandwidth'] },
-  { icon:'fa-hard-drive', title:'Hardware Support', img:'https://via.placeholder.com/400x160?text=Hardware', features:['Server Management','Workstation Support','Storage','Backup Systems','Refresh'] },
-  { icon:'fa-lock', title:'Cyber Security', img:'https://via.placeholder.com/400x160?text=Security', features:['Threat Detection','Vulnerability Assessment','IR','Compliance','Awareness'] }
-];
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <p>Expert support for your IT operations</p>
+    <div class="service-cards">
+      
+      <div class="service-card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Support</h3>
+        <ul>
+          <li>AWS Management</li>
+          <li>Azure Administration</li>
+          <li>GCP Solutions</li>
+          <li>Cloud Migration</li>
+          <li>Cost Optimization</li>
+        </ul>
+      </div>
 
-const whyChooseData = [
-  { title:'99.9% SLA Guarantee', img:'https://via.placeholder.com/400x160?text=SLA', features:['Transparent SLA terms','Proactive monitoring','Guaranteed uptime'] },
-  { title:'Rapid Response', img:'https://via.placeholder.com/400x160?text=Rapid', features:['15-minute response time','Critical incident support','24/7 availability'] },
-  { title:'Enterprise Security', img:'https://via.placeholder.com/400x160?text=Security', features:['Encryption','Compliance standards','Regular audits'] },
-  { title:'Expert Team', img:'https://via.placeholder.com/400x160?text=Team', features:['Certified professionals','Industry expertise','Continuous training'] },
-  { title:'24/7 Monitoring', img:'https://via.placeholder.com/400x160?text=Monitoring', features:['AI-powered monitoring','Proactive alerts','Issue prevention'] },
-  { title:'Strategic Planning', img:'https://via.placeholder.com/400x160?text=Planning', features:['Technology roadmap','Business alignment','Future-ready solutions'] }
-];
+      <div class="service-card">
+        <div class="icon">🖥️</div>
+        <h3>MS365 Support</h3>
+        <ul>
+          <li>Teams Admin</li>
+          <li>Exchange Management</li>
+          <li>SharePoint</li>
+          <li>OneDrive</li>
+          <li>Security Configuration</li>
+        </ul>
+      </div>
 
-const testimonialData = [
-  { company:'Tech Corp', quote:'SYSNETIX transformed our cloud infrastructure with 40% cost savings.', author:'John Smith, CTO', img:'https://via.placeholder.com/400x160?text=Client1' },
-  { company:'Enterprise Inc', quote:'24/7 support has been critical to our business continuity.', author:'Sarah Johnson, IT Director', img:'https://via.placeholder.com/400x160?text=Client2' },
-  { company:'Global Solutions', quote:'Expert team provided seamless migration to Azure.', author:'Mike Brown, Infrastructure Lead', img:'https://via.placeholder.com/400x160?text=Client3' }
-];
+      <div class="service-card">
+        <div class="icon">💻</div>
+        <h3>Citrix & VDi</h3>
+        <ul>
+          <li>VDI Deployment</li>
+          <li>App Streaming</li>
+          <li>Session Management</li>
+          <li>Performance Tuning</li>
+          <li>UX</li>
+        </ul>
+      </div>
 
-function el(html){const template=document.createElement('template');template.innerHTML=html.trim();return template.content.firstChild}
-function renderServices(){const grid=document.getElementById('servicesGrid');servicesData.forEach(s=>{const card=el(`<div class="service-card reveal">${s.img?`<img src="${s.img}" alt="${s.title}">`:''}<div class="service-title"><span class="service-icon"><i class="fas ${s.icon}"></i></span>${s.title}</div><div class="service-list"><ul>${s.features.map(f=>`<li>${f}</li>`).join('')}</ul></div></div>`);grid.appendChild(card)})}
-function renderWhy(){const grid=document.getElementById('whyGrid');whyChooseData.forEach(w=>{const card=el(`<div class="why-card reveal"><img src="${w.img}" alt="${w.title}"><h3>${w.title}</h3><ul>${w.features.map(f=>`<li>${f}</li>`).join('')}</ul></div>`);grid.appendChild(card)})}
-function renderTestimonials(){const grid=document.getElementById('testimonialGrid');testimonialData.forEach(t=>{const card=el(`<div class="testimonial reveal"><img src="${t.img}" alt="${t.company}"><div class="stars">★★★★★</div><p>${t.quote}</p><strong>${t.author}</strong></div>`);grid.appendChild(card)})}
+      <div class="service-card">
+        <div class="icon">🌐</div>
+        <h3>Network Support</h3>
+        <ul>
+          <li>Network Design</li>
+          <li>Firewall Management</li>
+          <li>VPNs</li>
+          <li>Monitoring</li>
+          <li>Bandwidth</li>
+        </ul>
+      </div>
 
-document.addEventListener('DOMContentLoaded',()=>{renderServices();renderWhy();renderTestimonials()})
-</script>
+      <div class="service-card">
+        <div class="icon">🖲️</div>
+        <h3>Hardware Support</h3>
+        <ul>
+          <li>Server Management</li>
+          <li>Workstation Support</li>
+          <li>Storage</li>
+          <li>Backup Systems</li>
+          <li>Refresh</li>
+        </ul>
+      </div>
 
-<script>
-/* Mobile menu toggle */
-document.getElementById('menuBtn').addEventListener('click',()=>{
-  const menu=document.getElementById('mobileMenu')
-  const expanded=menu.style.display!=='none'
-  menu.style.display=expanded?'none':'block'
-  document.getElementById('menuBtn').setAttribute('aria-expanded',!expanded)
-})
+      <div class="service-card">
+        <div class="icon">🛡️</div>
+        <h3>Cyber Security</h3>
+        <ul>
+          <li>Threat Detection</li>
+          <li>Vulnerability Assessment</li>
+          <li>IR</li>
+          <li>Compliance</li>
+          <li>Awareness</li>
+        </ul>
+      </div>
 
-/* Typing animation for hero */
-const typingText=document.getElementById('typingText')
-const words=['IT Infrastructure Solutions','Cloud Migrations','Cybersecurity Services','Managed IT Support']
-let idx=0,charIdx=0,adding=true
-setInterval(()=>{
-  if(adding){
-    typingText.textContent+=words[idx][charIdx]
-    charIdx++
-    if(charIdx===words[idx].length)adding=false
-  }else{
-    typingText.textContent=typingText.textContent.slice(0,-1)
-    if(typingText.textContent.length===0){adding=true;idx=(idx+1)%words.length;charIdx=0}
-  }
-},90)
-</script>
+    </div>
+  </section>
 
 </body>
 </html>
