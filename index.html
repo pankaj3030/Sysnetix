@@ -17,7 +17,6 @@
         <a href="#home" aria-label="SYSNETIX Home">
           <img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo">
         </a>
-        <div class="visually-hidden" aria-hidden="true">SYSNETIX</div>
       </div>
 
       <nav class="nav-links" role="navigation" aria-label="Main">
@@ -28,27 +27,29 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:12px">
+      <div class="nav-actions">
         <button class="cta" id="bookBtn">Schedule</button>
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" style="display:none;background:white;border-bottom:1px solid rgba(13,16,22,0.04);padding:16px;">
-    <div class="container" style="display:flex;flex-direction:column;gap:8px">
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu-inner">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <button class="cta" style="width:100%;margin-top:6px">Schedule</button>
+      <button class="cta mobile-cta">Schedule</button>
     </div>
   </div>
 
-  <!-- HERO -->
-  <main class="hero" id="home" role="main">
+  <!-- Hero Section -->
+  <main class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="shape s1" aria-hidden="true"></div>
     <div class="shape s2" aria-hidden="true"></div>
@@ -63,24 +64,24 @@
           <a class="btn-outline" href="#services">Explore Services</a>
         </div>
 
-        <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">Trusted by enterprises &middot; ISO-aligned practices &middot; 24/7 support</div>
+        <div class="hero-trusted">Trusted by enterprises · ISO-aligned practices · 24/7 support</div>
       </div>
 
-      <aside class="hero-card" aria-hidden="false">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <aside class="hero-card">
+        <div class="hero-stats">
           <div>
-            <div style="font-size:14px;color:var(--muted)">Active Clients</div>
-            <div style="font-weight:800;font-size:20px;color:#071032;">1000+</div>
+            <div class="stat-label">Active Clients</div>
+            <div class="stat-value">1000+</div>
           </div>
           <div>
-            <div style="font-size:14px;color:var(--muted)">Avg. Response</div>
-            <div style="font-weight:800;font-size:20px;color:#071032;">15 min</div>
+            <div class="stat-label">Avg. Response</div>
+            <div class="stat-value">15 min</div>
           </div>
         </div>
 
-        <div style="border-top:1px solid rgba(13,16,22,0.04);padding-top:12px">
-          <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Featured services</div>
-          <ul style="display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:0;margin:0;color:#0f1724;font-weight:600">
+        <div class="hero-services">
+          <div class="featured-label">Featured services</div>
+          <ul>
             <li>Cloud & migrations</li>
             <li>Cybersecurity</li>
             <li>MS365 & collaboration</li>
@@ -91,71 +92,31 @@
     </div>
   </main>
 
-  <!-- Services -->
+  <!-- Sections -->
   <section id="services">
     <div class="container section-title">
       <h2>Complete Service Portfolio</h2>
       <p>Six core service areas covering all aspects of enterprise IT infrastructure and security</p>
     </div>
-
-    <div class="container services-grid" id="servicesGrid">
-      <!-- injected -->
-    </div>
+    <div class="container services-grid" id="servicesGrid"></div>
   </section>
 
-  <!-- Why Us -->
   <section id="why-us">
     <div class="container section-title">
       <h2>Why Choose SYSNETIX</h2>
       <p>Enterprise-grade expertise with proven results</p>
     </div>
-
-    <div class="container why-grid" id="whyGrid">
-      <!-- injected -->
-    </div>
-
-    <div class="container" style="margin-top:28px">
-      <div style="display:grid;grid-template-columns:repeat(1,1fr);gap:12px">
-        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
-          <div style="flex:1;display:flex;gap:12px">
-            <div style="background:var(--primary);color:#fff;padding:16px;border-radius:12px;font-weight:800">99.9%</div>
-            <div>
-              <div style="font-weight:700">Uptime SLA</div>
-              <div class="muted">Reliable, SLA-backed managed services</div>
-            </div>
-          </div>
-          <div style="flex:1;display:flex;gap:12px">
-            <div style="background:#06b6d4;color:#fff;padding:16px;border-radius:12px;font-weight:800">15m</div>
-            <div>
-              <div style="font-weight:700">Response Time</div>
-              <div class="muted">Rapid escalation & incident handling</div>
-            </div>
-          </div>
-          <div style="flex:1;display:flex;gap:12px">
-            <div style="background:#f59e0b;color:#fff;padding:16px;border-radius:12px;font-weight:800">1000+</div>
-            <div>
-              <div style="font-weight:700">Enterprise Clients</div>
-              <div class="muted">Long-term partnerships & proven delivery</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container why-grid" id="whyGrid"></div>
   </section>
 
-  <!-- Testimonials -->
   <section id="testimonials">
     <div class="container section-title">
       <h2>Client Success Stories</h2>
       <p>What enterprise leaders say about SYSNETIX</p>
     </div>
-
-    <div class="container testimonials-grid" id="testimonialsGrid">
-      <!-- injected -->
-    </div>
+    <div class="container testimonials-grid" id="testimonialsGrid"></div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <div class="container section-title">
       <h2>Get In Touch</h2>
@@ -163,39 +124,31 @@
     </div>
 
     <div class="container contact-grid">
-      <div class="contact-card">
-        <i class="fas fa-phone" aria-hidden="true" style="font-size:26px;color:var(--primary)"></i>
-        <h3 style="margin-top:10px">Phone</h3>
+      <div class="contact-card phone">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
         <div class="muted">+1 (555) 123-4567 — 24/7</div>
       </div>
 
-      <div class="contact-card">
-        <i class="fas fa-envelope" aria-hidden="true" style="font-size:26px;color:var(--primary)"></i>
-        <h3 style="margin-top:10px">Email</h3>
+      <div class="contact-card email">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
         <div class="muted">solutions@sysnetix.com — response within 1 hour</div>
       </div>
 
-      <div class="contact-card">
-        <i class="fas fa-map-marker-alt" aria-hidden="true" style="font-size:26px;color:var(--primary)"></i>
-        <h3 style="margin-top:10px">Office</h3>
+      <div class="contact-card office">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Office</h3>
         <div class="muted">111 New Union Street, Union House, Coventry, CV1 2NT</div>
-      </div>
-    </div>
-
-    <div class="container" style="margin-top:20px;text-align:center">
-      <div class="cta-banner" style="padding:22px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ffb84d);display:inline-block">
-        <h3 style="margin:0 0 8px;color:#071032">Ready to Optimize Your IT Infrastructure?</h3>
-        <p class="muted" style="margin:0 0 12px">Let SYSNETIX handle your IT so you can focus on business growth.</p>
-        <button class="btn-primary" id="scheduleFloating">Schedule Your Consultation</button>
       </div>
     </div>
   </section>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="container center">
-      <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center">
-        <div style="min-width:220px;text-align:left">
-          <div style="font-weight:800">SYSNETIX</div>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div>SYSNETIX</div>
           <div class="muted">Enterprise IT solutions for security, performance & reliability.</div>
         </div>
         <div class="muted">© 2025 SYSNETIX Corporation — All rights reserved.</div>
@@ -203,10 +156,10 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA (WhatsApp / Schedule) -->
-  <a href="https://wa.me/447700900000" target="_blank" rel="noopener" class="sticky-cta" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp" style="font-size:18px"></i>
-    <span style="font-weight:700">Chat</span>
+  <!-- Sticky CTA -->
+  <a href="https://wa.me/447700900000" target="_blank" class="sticky-cta">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat</span>
   </a>
 
   <script src="script.js"></script>
