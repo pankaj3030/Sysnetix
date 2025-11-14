@@ -20,116 +20,76 @@ const whyChooseData = [
 const testimonialData = [
   { company:'Tech Corp', quote:'SYSNETIX transformed our cloud infrastructure with 40% cost savings.', author:'John Smith, CTO' },
   { company:'Enterprise Inc', quote:'24/7 support has been critical to our business continuity.', author:'Sarah Johnson, IT Director' },
-  { company:'Global Solutions', quote:'Expert team provided seamless migration to Azure.', author:'Mike Brown, Infrastructure Lead' }
+  { company:'Global Solutions', quote:'Expert team provided seamless migration to Azure.', author:'Mike Brown, CIO' }
 ];
 
-/* ===== Render Helpers ===== */
-function el(html){
-  const template=document.createElement('template');
-  template.innerHTML=html.trim();
-  return template.content.firstChild;
-}
-
-function renderServices(){
-  const grid=document.getElementById('servicesGrid');
-  servicesData.forEach(s=>{
-    const card=el(`<div class="service-card reveal">
-      <div class="service-title"><span class="service-icon"><i class="fas ${s.icon}"></i></span><div>${s.title}</div></div>
-      <div class="service-list"><ul>${s.features.map(f=>`<li style="margin:6px 0;color:var(--muted)">${f}</li>`).join('')}</ul></div>
-    </div>`);
-    grid.appendChild(card);
-  });
-}
-
-function renderWhy(){
-  const grid=document.getElementById('whyGrid');
-  whyChooseData.forEach(w=>{
-    const card=el(`<div class="why-card reveal"><h3>${w.title}</h3><ul>${w.features.map(f=>`<li style="margin:6px 0;color:var(--muted)">• ${f}</li>`).join('')}</ul></div>`);
-    grid.appendChild(card);
-  });
-}
-
-function renderTestimonials(){
-  const grid=document.getElementById('testimonialsGrid');
-  testimonialData.forEach(t=>{
-    const card=el(`<div class="testimonial reveal"><div class="stars">★★★★★</div><p style="font-style:italic;margin-bottom:8px">"${t.quote}"</p><div style="font-weight:700">${t.author}</div><div class="muted">${t.company}</div></div>`);
-    grid.appendChild(card);
-  });
-}
-
-/* ===== Interactive Features ===== */
-document.addEventListener('DOMContentLoaded',()=>{
-  renderServices();
-  renderWhy();
-  renderTestimonials();
-
-  // Mobile menu toggle
-  const menuBtn=document.getElementById('menuBtn');
-  const mobile=document.getElementById('mobileMenu');
-  if(menuBtn && mobile){
-    menuBtn.addEventListener('click', ()=>{
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
-    });
-  }
-
-  // Calendly / Booking popup
-  function openBooking(){
-    const url='https://calendly.com/ipankajmehndiratta/30min';
-    if(window.Calendly && Calendly.initPopupWidget){
-      Calendly.initPopupWidget({url});
-      return;
-    }
-    window.open(url,'_blank','noopener');
-  }
-
-  const bookBtnEl = document.getElementById('bookBtn');
-  const primaryDemoEl = document.getElementById('primaryDemo');
-  const scheduleFloatingEl = document.getElementById('scheduleFloating');
-
-  if(bookBtnEl) bookBtnEl.addEventListener('click', openBooking);
-  if(primaryDemoEl) primaryDemoEl.addEventListener('click', openBooking);
-  if(scheduleFloatingEl) scheduleFloatingEl.addEventListener('click', openBooking);
-
-  // Scroll reveal animation
-  const items=document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('show');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(i=>io.observe(i));
-
-  // Typing effect
-  const typingEl=document.getElementById('typingText');
-  const text='Complete IT Infrastructure Solutions';
-  let i=0;
-  function step(){ typingEl.textContent=text.slice(0,i); i++; if(i<=text.length) setTimeout(step,26); }
-  step();
-
-  // Sticky CTA keyboard accessible
-  const sticky=document.querySelector('.sticky-cta');
-  if(sticky){
-    sticky.addEventListener('keypress',e=>{
-      if(e.key==='Enter') sticky.click();
-    });
-  }
-
-  // Lazy-load video for fast connections
-  const canLoadVideo = window.innerWidth >= 900 && (navigator.connection ? ((navigator.connection.effectiveType||'4g').indexOf('2g')===-1) : true);
-  if(!canLoadVideo){
-    const v=document.querySelector('.hero video');
-    if(v) v.remove();
-  }
-
-  // Prevent layout shift on resize
-  let rTO;
-  window.addEventListener('resize',()=>{
-    clearTimeout(rTO);
-    rTO=setTimeout(()=>{},200);
-  });
+/* ===== Render Services ===== */
+const servicesGrid = document.getElementById('servicesGrid');
+servicesData.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'service-card reveal';
+  card.innerHTML = `
+    <div class="service-title"><i class="fas ${s.icon} service-icon"></i> ${s.title}</div>
+    <div class="service-list"><ul>${s.features.map(f => `<li>${f}</li>`).join('')}</ul></div>
+  `;
+  servicesGrid.appendChild(card);
 });
+
+/* ===== Render Why Choose ===== */
+const whyGrid = document.getElementById('whyGrid');
+whyChooseData.forEach(w => {
+  const card = document.createElement('div');
+  card.className = 'why-card reveal';
+  card.innerHTML = `<h3>${w.title}</h3><ul>${w.features.map(f=>`<li>${f}</li>`).join('')}</ul>`;
+  whyGrid.appendChild(card);
+});
+
+/* ===== Render Testimonials ===== */
+const testimonialsGrid = document.getElementById('testimonialsGrid');
+testimonialData.forEach(t=>{
+  const card = document.createElement('div');
+  card.className='testimonial reveal';
+  card.innerHTML = `<p>"${t.quote}"</p><strong>${t.author}</strong>`;
+  testimonialsGrid.appendChild(card);
+});
+
+/* ===== Mobile Menu Toggle ===== */
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{
+  if(mobileMenu.style.display==='none'){
+    mobileMenu.style.display='block';
+    menuBtn.setAttribute('aria-expanded','true');
+  }else{
+    mobileMenu.style.display='none';
+    menuBtn.setAttribute('aria-expanded','false');
+  }
+});
+
+/* ===== Typing Effect ===== */
+const typingText = document.getElementById('typingText');
+const words = ["IT Infrastructure Solutions", "Cloud Services", "Cybersecurity Services"];
+let i = 0, j = 0, forward = true;
+
+function type(){
+  if(forward){
+    if(j<words[i].length){ typingText.textContent+=words[i][j]; j++; setTimeout(type,80);}
+    else{ forward=false; setTimeout(type,1200); }
+  } else {
+    if(j>0){ typingText.textContent=words[i].substring(0,j-1); j--; setTimeout(type,40);}
+    else{ forward=true; i=(i+1)%words.length; setTimeout(type,200);}
+  }
+}
+type();
+
+/* ===== Scroll Reveal ===== */
+const revealEls = document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  revealEls.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    const windowH = window.innerHeight;
+    if(top<windowH-100) el.classList.add('show');
+  });
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
