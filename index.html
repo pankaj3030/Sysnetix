@@ -2,187 +2,263 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SYSNETIX — Enterprise IT Infrastructure Solutions</title>
-<meta name="description" content="Enterprise IT infrastructure, cloud, and cybersecurity services. Managed support, migrations, monitoring and more." />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-  --bg: #ffffff;
-  --page-bg: linear-gradient(180deg,#f7fbff,#eef5ff);
-  --primary: #2d67ff;      /* Royal Blue */
-  --accent: #ffd700;       /* Gold */
-  --danger: #dc143c;       /* Crimson */
-  --muted: #6b7280;
-  --card-bg: #ffffff;
-  --radius: 12px;
-  --max-width: 1200px;
-  --shadow-sm: 0 4px 12px rgba(22,27,32,0.06);
-  --shadow-md: 0 18px 40px rgba(22,27,32,0.08);
-  --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --primary:#0038A8; /* Royal Blue */
+  --accent:#D4AF37;  /* Gold */
+  --danger:#DC143C;  /* Crimson */
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --page-bg:linear-gradient(180deg,#f7fbff,#eef5ff);
+  --card-bg:#ffffff;
+  --radius:12px;
+  --max-width:1200px;
+  --shadow-sm:0 4px 12px rgba(22,27,32,0.06);
+  --shadow-md:0 18px 40px rgba(22,27,32,0.12);
+  --ff:'Inter',system-ui,-apple-system,'Segoe UI',Roboto;
 }
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff);margin:0;color:#0f1724;background:var(--page-bg);-webkit-font-smoothing:antialiased}
-.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto;display:block}
+body{font-family:var(--ff);margin:0;background:var(--page-bg);color:#0f1724;}
 
 /* Header */
-.navbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--max-width);margin:0 auto;padding:0 20px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{width:160px}
-.nav-links{display:none;gap:12px;align-items:center}
-.nav-links a{color:var(--muted);padding:8px 12px;border-radius:8px;font-weight:600}
-.nav-links a:hover{color:var(--primary);background:rgba(45,103,255,0.1)}
-.cta{background:var(--accent);color:#0b1020;padding:10px 18px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(255,215,0,0.12)}
-.menu-btn{display:inline-flex;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
-@media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.65);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,0.05);}
+.nav-inner{max-width:var(--max-width);margin:auto;padding:0 20px;height:72px;display:flex;justify-content:space-between;align-items:center;}
+.brand img{width:160px;}
+.nav-links{display:none;gap:20px;}
+.nav-links a{color:var(--muted);font-weight:600;padding:8px 12px;border-radius:8px;}
+.nav-links a:hover{color:var(--primary);background:rgba(0,56,168,0.1);}
+.cta{background:var(--accent);padding:10px 18px;border-radius:10px;font-weight:700;color:#111;border:none;cursor:pointer;}
+.menu-btn{background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer;}
+@media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none;}}
 
-/* Hero */
-.hero{min-height:78vh;display:flex;align-items:center;padding:80px 0;position:relative;overflow:hidden;color:#071032}
-.hero-bg{position:absolute;inset:0;pointer-events:none;background:rgba(255,255,255,0.3);z-index:-1;}
+/* Mobile Menu */
+#mobileMenu{display:none;background:#fff;border-bottom:1px solid rgba(0,0,0,0.08);}
+#mobileMenu a{padding:10px 0;color:#111;font-weight:600;border-bottom:1px solid rgba(0,0,0,0.05)}
+
+/* HERO */
+.hero{min-height:78vh;display:flex;align-items:center;position:relative;padding:80px 0;}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
-@media(min-width:960px){.hero-grid{grid-template-columns:1fr 480px}}
-.hero-left h1{font-size:2.6rem;line-height:1.02;margin:0 0 12px;font-weight:800}
-.sub{color:var(--muted);font-size:1.05rem;max-width:70ch;margin-bottom:18px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(90deg,var(--primary),var(--danger));color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:var(--shadow-md);transition:transform .18s ease}
-.btn-primary:hover{transform:translateY(-3px)}
-.btn-outline{background:transparent;border:1.5px solid rgba(15,23,36,0.06);padding:10px 16px;border-radius:10px;color:var(--muted);font-weight:600}
-.typing{font-weight:700;color:var(--primary);display:inline-block;border-right:3px solid var(--primary);white-space:nowrap;overflow:hidden}
-.hero-card{background:linear-gradient(180deg,#ffffff, #f7fbff);border-radius:16px;padding:22px;box-shadow:var(--shadow-md);border:1px solid rgba(13,16,22,0.04)}
+.hero-bg{position:absolute;inset:0;background:rgba(255,255,255,0.2);z-index:-1;}
+.hero-grid{max-width:var(--max-width);margin:auto;padding:0 20px;display:grid;gap:30px;}
+@media(min-width:960px){.hero-grid{grid-template-columns:1fr 450px;}}
 
-/* floating shapes */
-.shape{position:absolute;border-radius:50%;filter:blur(18px);opacity:0.35}
-.s1{width:260px;height:260px;background:var(--primary);left:-80px;top:-40px}
-.s2{width:160px;height:160px;background:var(--accent);right:-40px;bottom:60px;opacity:0.25}
+.hero-left h1{font-size:2.8rem;margin:0;color:#071032;font-weight:800;}
+.sub{color:var(--muted);margin-top:10px;font-size:1.05rem;}
+
+.btn-primary{background:linear-gradient(90deg,var(--primary),var(--danger));padding:12px 18px;border-radius:12px;color:#fff;font-weight:700;border:none;cursor:pointer;}
+.btn-outline{border:1.5px solid rgba(0,0,0,0.1);padding:10px 18px;border-radius:10px;color:var(--muted);}
+
+.typing{font-weight:800;color:var(--primary);border-right:3px solid var(--primary);white-space:nowrap;overflow:hidden;}
+
+.hero-card{background:#ffffffd8;padding:20px;border-radius:16px;backdrop-filter:blur(6px);box-shadow:var(--shadow-md);}
+
+/* Floating Shapes */
+.shape{position:absolute;border-radius:50%;filter:blur(20px);opacity:0.35;}
+.s1{width:250px;height:250px;background:var(--primary);top:-40px;left:-60px;}
+.s2{width:150px;height:150px;background:var(--accent);bottom:40px;right:-30px;opacity:0.3;}
 
 /* Sections */
-section{padding:72px 0}
-.section-title{text-align:center;margin-bottom:28px}
-.section-title h2{font-size:1.9rem;margin:0;color:#071032}
-.section-title p{color:var(--muted);margin-top:10px}
+section{padding:70px 0;}
+.section-title{text-align:center;margin-bottom:30px;}
+.section-title h2{margin:0;font-size:2rem;color:#071032;}
 
-.services-grid, .why-grid, .testimonials-grid, .contact-grid{display:grid;gap:20px}
-.services-grid{grid-template-columns:1fr}
-@media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr)}
+.grid{display:grid;gap:20px;}
+@media(min-width:768px){.services-grid{grid-template-columns:repeat(3,1fr);}}
 
-.service-card, .why-card, .testimonial, .contact-card{background:var(--card-bg);padding:22px;border-radius:14px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
-.service-card:hover,.why-card:hover,.testimonial:hover,.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
-.service-icon{width:52px;height:52px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--primary),var(--danger));color:white;margin-right:12px}
-.service-title{display:flex;align-items:center;gap:8px;font-weight:700;color:#071032}
-.service-list{margin-top:12px;color:var(--muted);font-size:0.95rem}
-.stars{color:var(--accent);margin-bottom:8px}
+/* Cards */
+.card{background:var(--card-bg);padding:22px;border-radius:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.05);transition:.2s;}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.service-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--primary),var(--danger));color:#fff;}
 
-.contact-grid{grid-template-columns:1fr}
-@media(min-width:768px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.stars{color:var(--accent);font-size:20px;margin-bottom:8px;}
 
-.sticky-cta{position:fixed;right:18px;bottom:18px;background:var(--primary);color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 12px 30px rgba(0,56,168,0.26);z-index:80;display:flex;gap:10px;align-items:center}
-footer{padding:36px 0;background:transparent;color:var(--muted);border-top:1px solid rgba(13,16,22,0.04)}
-.muted{color:var(--muted)}
-.center{text-align:center}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.show{opacity:1;transform:none}
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(20px);transition:0.6s;}
+.reveal.show{opacity:1;transform:none;}
+
+/* WhatsApp CTA */
+.sticky-cta{
+  position:fixed;bottom:20px;right:20px;
+  background:var(--primary);color:#fff;
+  padding:12px 18px;border-radius:50px;
+  display:flex;gap:12px;align-items:center;
+  box-shadow:0 12px 30px rgba(0,56,168,0.3);
+  z-index:200;
+}
+
+/* Footer */
+footer{text-align:center;color:var(--muted);padding:40px 0;border-top:1px solid rgba(0,0,0,0.05);}
 </style>
 </head>
+
 <body>
 
 <header class="navbar">
-<div class="nav-inner container">
-<div class="brand"><a href="#home"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo"></a></div>
-<nav class="nav-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#why-us">Why Us</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></nav>
-<div style="display:flex;align-items:center;gap:12px">
-<button class="cta" id="bookBtn">Schedule</button>
-<button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
-</div>
-</div>
-</header>
+<div class="nav-inner">
+<div class="brand"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png"></div>
 
-<div id="mobileMenu" style="display:none;background:white;padding:16px;border-bottom:1px solid rgba(13,16,22,0.04)">
-<div class="container" style="display:flex;flex-direction:column;gap:8px">
+<nav class="nav-links">
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#why-us">Why Us</a>
 <a href="#testimonials">Testimonials</a>
 <a href="#contact">Contact</a>
-<button class="cta" style="width:100%;margin-top:6px">Schedule</button>
+</nav>
+
+<button class="menu-btn" id="menuBtn"><i class="fa fa-bars"></i></button>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu">
+<div style="padding:16px;display:flex;flex-direction:column;gap:10px;">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#why-us">Why Us</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
 </div>
 </div>
 
-<main class="hero" id="home">
-<video autoplay muted loop playsinline class="hero-video"><source src="video.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<!-- HERO -->
+<section class="hero" id="home">
+<video autoplay muted loop class="hero-video">
+<source src="video.mp4" type="video/mp4">
+</video>
+
 <div class="hero-bg"></div>
-<div class="shape s1"></div>
-<div class="shape s2"></div>
-<div class="container hero-grid">
-<div class="hero-left">
-<h1>Complete <span class="typing" id="typingText">IT Infrastructure Solutions</span></h1>
-<p class="sub">We deliver secure, scalable and cost-efficient IT solutions — cloud migrations, 24/7 monitoring, managed support and enterprise-grade cybersecurity.</p>
-<div class="hero-actions">
-<button class="btn-primary" id="primaryDemo">Get a Free Consultation</button>
-<a class="btn-outline" href="#services">Explore Services</a>
-</div>
-</div>
-<aside class="hero-card">
-<div style="display:flex;justify-content:space-between;margin-bottom:12px">
-<div><div style="font-size:14px;color:var(--muted)">Active Clients</div><div style="font-weight:800;font-size:20px;color:#071032;">1000+</div></div>
-<div><div style="font-size:14px;color:var(--muted)">Avg. Response</div><div style="font-weight:800;font-size:20px;color:#071032;">15 min</div></div>
-</div>
-</aside>
-</div>
-</main>
+<div class="shape s1"></div><div class="shape s2"></div>
 
-<!-- Add remaining sections similarly as before -->
+<div class="hero-grid">
+<div class="hero-left">
+<h1>Complete <span class="typing" id="typingText"></span></h1>
+<p class="sub">We deliver secure, scalable and cost-efficient IT solutions for enterprises worldwide.</p>
+
+<div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn-primary">Get Consultation</button>
+<a href="#services" class="btn-outline">Explore Services</a>
+</div>
+</div>
+
+<div class="hero-card">
+<b style="font-size:20px;">1000+ Active Clients</b>
+<p style="color:var(--muted);margin:5px 0">Average Response: <b>15 Minutes</b></p>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services">
+<div class="section-title"><h2>Our Services</h2></div>
+<div class="services-grid grid" id="servicesGrid"></div>
+</section>
+
+<!-- Why us -->
+<section id="why-us">
+<div class="section-title"><h2>Why Choose Us</h2></div>
+<div class="grid" id="whyGrid"></div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+<div class="section-title"><h2>Testimonials</h2></div>
+<div class="grid" id="testimonialsGrid"></div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="section-title"><h2>Contact Us</h2></div>
+<div class="grid" style="max-width:800px;margin:auto;">
+<div class="card center"><i class="fa fa-phone" style="font-size:28px;color:var(--primary)"></i><h3>Phone</h3><p>+44 7700 900000</p></div>
+<div class="card center"><i class="fa fa-envelope" style="font-size:28px;color:var(--primary)"></i><h3>Email</h3><p>support@sysnetix.com</p></div>
+<div class="card center"><i class="fa fa-map-marker" style="font-size:28px;color:var(--primary)"></i><h3>Address</h3><p>Coventry, United Kingdom</p></div>
+</div>
+</section>
+
+<footer>
+© 2025 SYSNETIX — All Rights Reserved
+</footer>
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/447700900000" target="_blank" class="sticky-cta">
+<i class="fab fa-whatsapp"></i> Chat
+</a>
 
 <script>
-const servicesData=[
-{icon:'fa-cloud',title:'Cloud Support',features:['AWS','Azure','GCP','Migration','Optimization']},
-{icon:'fa-globe',title:'MS365',features:['Teams','Exchange','SharePoint','OneDrive','Security']},
-{icon:'fa-server',title:'Citrix & VDI',features:['VDI Deployment','App Streaming','Session Mgmt','Performance','UX']},
-{icon:'fa-wifi',title:'Network',features:['Design','Firewall','VPN','Monitoring','Bandwidth']},
-{icon:'fa-hard-drive',title:'Hardware',features:['Server','Workstation','Storage','Backup','Refresh']},
-{icon:'fa-lock',title:'Cyber Security',features:['Threat Detection','Vuln Assessment','IR','Compliance','Awareness']}
+// Typing effect
+const typingText = "IT Infrastructure Solutions";
+let i = 0;
+function type() {
+  document.getElementById("typingText").textContent = typingText.slice(0, i);
+  i++;
+  if (i <= typingText.length) setTimeout(type, 50);
+}
+type();
+
+// Data Rendering
+const services = [
+  {icon:"fa-cloud",title:"Cloud Support"},
+  {icon:"fa-wifi",title:"Network Support"},
+  {icon:"fa-server",title:"Citrix & VDI"},
+  {icon:"fa-lock",title:"Cyber Security"},
+  {icon:"fa-hard-drive",title:"Hardware"},
+  {icon:"fa-globe",title:"MS365 Support"}
 ];
 
-const whyChooseData=[
-{title:'99.9% SLA',features:['Transparent SLA','Proactive monitoring','Guaranteed uptime']},
-{title:'Rapid Response',features:['15-min response','Critical incident','24/7 availability']},
-{title:'Enterprise Security',features:['Encryption','Compliance','Audits']},
-{title:'Expert Team',features:['Certified','Industry expertise','Training']},
-{title:'24/7 Monitoring',features:['AI-powered','Proactive alerts','Prevention']},
-{title:'Strategic Planning',features:['Roadmap','Business alignment','Future-ready']}
+const why = [
+  "99.9% SLA Guarantee","15-Minute Response","Enterprise Security",
+  "Certified Engineers","24/7 Monitoring","Strategic Planning"
 ];
 
-const testimonialData=[
-{company:'Tech Corp',quote:'SYSNETIX transformed cloud infra.',author:'John Smith'},
-{company:'Enterprise Inc',quote:'24/7 support critical.',author:'Sarah Johnson'},
-{company:'Global Solutions',quote:'Seamless Azure migration.',author:'Mike Brown'}
+const testimonials = [
+  "Excellent IT transformation — 40% cost reduction.",
+  "24/7 support is extremely reliable.",
+  "Azure migration was smooth and fast."
 ];
 
-function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild}
-function renderServices(){const grid=document.getElementById('servicesGrid');servicesData.forEach(s=>{const card=el(`<div class="service-card reveal"><div class="service-title"><span class="service-icon"><i class="fas ${s.icon}"></i></span><div>${s.title}</div></div><div class="service-list"><ul>${s.features.map(f=>`<li>${f}</li>`).join('')}</ul></div></div>`);grid.appendChild(card);})}
-function renderWhy(){const grid=document.getElementById('whyGrid');whyChooseData.forEach(w=>{const card=el(`<div class="why-card reveal"><h3>${w.title}</h3><ul>${w.features.map(f=>`<li>${f}</li>`).join('')}</ul></div>`);grid.appendChild(card);})}
-function renderTestimonials(){const grid=document.getElementById('testimonialsGrid');testimonialData.forEach(t=>{const card=el(`<div class="testimonial reveal"><div class="stars">★★★★★</div><p>"${t.quote}"</p><div>${t.author}</div><div>${t.company}</div></div>`);grid.appendChild(card);})}
-
-document.addEventListener('DOMContentLoaded',()=>{
-renderServices();renderWhy();renderTestimonials();
-const typingEl=document.getElementById('typingText');const text='Complete IT Infrastructure Solutions';let i=0;
-function step(){typingEl.textContent=text.slice(0,i);i++;if(i<=text.length)setTimeout(step,26)};step();
-const menuBtn=document.getElementById('menuBtn');const mobile=document.getElementById('mobileMenu');
-menuBtn.addEventListener('click',()=>{const expanded=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!expanded));mobile.style.display=mobile.style.display==='block'?'none':'block'});
-function openBooking(){window.open('https://calendly.com/ipankajmehndiratta/30min','_blank','noopener')}
-document.getElementById('bookBtn').addEventListener('click',openBooking);
-document.getElementById('primaryDemo').addEventListener('click',openBooking);
-const items=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:0.1}});items.forEach(i=>io.observe(i));
+// Render Services
+services.forEach(s=>{
+  document.getElementById("servicesGrid").innerHTML +=
+  `<div class="card reveal">
+      <div class="service-title">
+         <div class="service-icon"><i class="fa ${s.icon}"></i></div>
+         <b>${s.title}</b>
+      </div>
+  </div>`;
 });
+
+// Render Why us
+why.forEach(w=>{
+  document.getElementById("whyGrid").innerHTML +=
+  `<div class="card reveal"><b>${w}</b></div>`;
+});
+
+// Render Testimonials
+testimonials.forEach(t=>{
+  document.getElementById("testimonialsGrid").innerHTML +=
+  `<div class="card reveal">
+      <div class="stars">★★★★★</div>
+      <p>${t}</p>
+  </div>`;
+});
+
+// Reveal animation
+const obs=new IntersectionObserver((items)=>{
+items.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show")}})
+});
+document.querySelectorAll(".reveal").forEach(r=>obs.observe(r));
+
+// Mobile Menu
+document.getElementById("menuBtn").onclick=()=>{
+ const m=document.getElementById("mobileMenu");
+ m.style.display = m.style.display==="block" ? "none" : "block";
+};
 </script>
+
 </body>
 </html>
