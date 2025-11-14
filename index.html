@@ -6,12 +6,9 @@
   <title>SYSNETIX — Enterprise IT Infrastructure Solutions</title>
   <meta name="description" content="Enterprise IT infrastructure, cloud, and cybersecurity services. Managed support, migrations, monitoring and more." />
   
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Main Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +16,9 @@
     <div class="nav-inner container">
       <div class="brand">
         <a href="#home" aria-label="SYSNETIX Home"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo"></a>
+        <div class="visually-hidden" aria-hidden="true">SYSNETIX</div>
       </div>
+
       <nav class="nav-links" role="navigation" aria-label="Main">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
@@ -27,6 +26,7 @@
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
+
       <div style="display:flex;align-items:center;gap:12px">
         <button class="cta" id="bookBtn">Schedule</button>
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><i class="fas fa-bars"></i></button>
@@ -35,19 +35,19 @@
   </header>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu">
-    <div class="container mobile-links">
+  <div id="mobileMenu" style="display:none;background:white;border-bottom:1px solid rgba(13,16,22,0.04);padding:16px;">
+    <div class="container" style="display:flex;flex-direction:column;gap:8px">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <button class="cta">Schedule</button>
+      <button class="cta" style="width:100%;margin-top:6px">Schedule</button>
     </div>
   </div>
 
   <!-- HERO -->
-  <main class="hero" id="home">
+  <main class="hero" id="home" role="main">
     <div class="hero-bg"></div>
     <div class="shape s1" aria-hidden="true"></div>
     <div class="shape s2" aria-hidden="true"></div>
@@ -56,26 +56,29 @@
       <div class="hero-left">
         <h1>Complete <span class="typing" id="typingText">IT Infrastructure Solutions</span></h1>
         <p class="sub">We deliver secure, scalable and cost-efficient IT solutions — cloud migrations, 24/7 monitoring, managed support and enterprise-grade cybersecurity.</p>
+
         <div class="hero-actions">
           <button class="btn-primary" id="primaryDemo">Get a Free Consultation</button>
           <a class="btn-outline" href="#services">Explore Services</a>
         </div>
-        <div class="hero-note">Trusted by enterprises &middot; ISO-aligned practices &middot; 24/7 support</div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">Trusted by enterprises &middot; ISO-aligned practices &middot; 24/7 support</div>
       </div>
 
-      <aside class="hero-card">
-        <div class="stat">
+      <aside class="hero-card" aria-hidden="false">
+        <div class="hero-card-stats">
           <div>
-            <div class="muted">Active Clients</div>
-            <strong>1000+</strong>
+            <div class="stat-label">Active Clients</div>
+            <div class="stat-value">1000+</div>
           </div>
           <div>
-            <div class="muted">Avg. Response</div>
-            <strong>15 min</strong>
+            <div class="stat-label">Avg. Response</div>
+            <div class="stat-value">15 min</div>
           </div>
         </div>
-        <div class="service-list">
-          <div class="muted">Featured services</div>
+
+        <div class="hero-card-services">
+          <div class="stat-label">Featured services</div>
           <ul>
             <li>Cloud & migrations</li>
             <li>Cybersecurity</li>
@@ -87,7 +90,7 @@
     </div>
   </main>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services">
     <div class="container section-title">
       <h2>Complete Service Portfolio</h2>
@@ -96,7 +99,7 @@
     <div class="container services-grid" id="servicesGrid"></div>
   </section>
 
-  <!-- Why Us Section -->
+  <!-- Why Us -->
   <section id="why-us">
     <div class="container section-title">
       <h2>Why Choose SYSNETIX</h2>
@@ -105,7 +108,7 @@
     <div class="container why-grid" id="whyGrid"></div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- Testimonials -->
   <section id="testimonials">
     <div class="container section-title">
       <h2>Client Success Stories</h2>
@@ -114,7 +117,7 @@
     <div class="container testimonials-grid" id="testimonialsGrid"></div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact">
     <div class="container section-title">
       <h2>Get In Touch</h2>
@@ -134,31 +137,23 @@
       <div class="contact-card">
         <i class="fas fa-map-marker-alt"></i>
         <h3>Office</h3>
-        <div class="muted">111 New Union Street, Union House, Coventry, CV1 2NT</div>
+        <div class="muted">111 New Union Street, Coventry, CV1 2NT</div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container center">
-      <div class="footer-flex">
-        <div>
-          <div class="logo-text">SYSNETIX</div>
-          <div class="muted">Enterprise IT solutions for security, performance & reliability.</div>
-        </div>
-        <div class="muted">© 2025 SYSNETIX Corporation — All rights reserved.</div>
-      </div>
+      <div>© 2025 SYSNETIX Corporation — All rights reserved.</div>
     </div>
   </footer>
 
   <!-- Sticky CTA -->
-  <a href="https://wa.me/447700900000" target="_blank" class="sticky-cta" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i> Chat
+  <a href="https://wa.me/447700900000" target="_blank" rel="noopener" class="sticky-cta" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat</span>
   </a>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
-  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
 </body>
 </html>
