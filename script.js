@@ -1,4 +1,4 @@
-/* ===== Content data ===== */
+/* ===== Content Data ===== */
 const servicesData = [
   { icon:'fa-cloud', title:'Cloud Support', features:['AWS Management','Azure Administration','GCP Solutions','Cloud Migration','Cost Optimization'] },
   { icon:'fa-globe', title:'MS365 Support', features:['Teams Admin','Exchange Management','SharePoint','OneDrive','Security Configuration'] },
@@ -23,8 +23,12 @@ const testimonialData = [
   { company:'Global Solutions', quote:'Expert team provided seamless migration to Azure.', author:'Mike Brown, Infrastructure Lead' }
 ];
 
-/* ===== Render helpers ===== */
-function el(html){const template=document.createElement('template');template.innerHTML=html.trim();return template.content.firstChild}
+/* ===== Render Helpers ===== */
+function el(html){
+  const template=document.createElement('template');
+  template.innerHTML=html.trim();
+  return template.content.firstChild;
+}
 
 function renderServices(){
   const grid=document.getElementById('servicesGrid');
@@ -34,7 +38,7 @@ function renderServices(){
       <div class="service-list"><ul>${s.features.map(f=>`<li style="margin:6px 0;color:var(--muted)">${f}</li>`).join('')}</ul></div>
     </div>`);
     grid.appendChild(card);
-  })
+  });
 }
 
 function renderWhy(){
@@ -42,7 +46,7 @@ function renderWhy(){
   whyChooseData.forEach(w=>{
     const card=el(`<div class="why-card reveal"><h3>${w.title}</h3><ul>${w.features.map(f=>`<li style="margin:6px 0;color:var(--muted)">• ${f}</li>`).join('')}</ul></div>`);
     grid.appendChild(card);
-  })
+  });
 }
 
 function renderTestimonials(){
@@ -50,50 +54,82 @@ function renderTestimonials(){
   testimonialData.forEach(t=>{
     const card=el(`<div class="testimonial reveal"><div class="stars">★★★★★</div><p style="font-style:italic;margin-bottom:8px">"${t.quote}"</p><div style="font-weight:700">${t.author}</div><div class="muted">${t.company}</div></div>`);
     grid.appendChild(card);
-  })
+  });
 }
 
-/* ===== Small interactive features ===== */
+/* ===== Interactive Features ===== */
 document.addEventListener('DOMContentLoaded',()=>{
-  renderServices();renderWhy();renderTestimonials();
+  renderServices();
+  renderWhy();
+  renderTestimonials();
 
-  // Mobile menu
-  const menuBtn=document.getElementById('menuBtn');const mobile=document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click',()=>{const expanded=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',!expanded);mobile.style.display= mobile.style.display==='block'? 'none':'block'})
+  // Mobile menu toggle
+  const menuBtn=document.getElementById('menuBtn');
+  const mobile=document.getElementById('mobileMenu');
+  if(menuBtn && mobile){
+    menuBtn.addEventListener('click', ()=>{
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+    });
+  }
 
-  // Schedule / Calendly popup
+  // Calendly / Booking popup
   function openBooking(){
     const url='https://calendly.com/ipankajmehndiratta/30min';
-    if(window.Calendly && Calendly.initPopupWidget){Calendly.initPopupWidget({url});return}
+    if(window.Calendly && Calendly.initPopupWidget){
+      Calendly.initPopupWidget({url});
+      return;
+    }
     window.open(url,'_blank','noopener');
   }
-  document.getElementById('bookBtn').addEventListener('click',openBooking);
-  document.getElementById('primaryDemo').addEventListener('click',openBooking);
-  document.getElementById('scheduleFloating').addEventListener('click',openBooking);
 
-  // smooth reveal
+  const bookBtnEl = document.getElementById('bookBtn');
+  const primaryDemoEl = document.getElementById('primaryDemo');
+  const scheduleFloatingEl = document.getElementById('scheduleFloating');
+
+  if(bookBtnEl) bookBtnEl.addEventListener('click', openBooking);
+  if(primaryDemoEl) primaryDemoEl.addEventListener('click', openBooking);
+  if(scheduleFloatingEl) scheduleFloatingEl.addEventListener('click', openBooking);
+
+  // Scroll reveal animation
   const items=document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
     });
   }, { threshold: 0.15 });
   items.forEach(i=>io.observe(i));
 
-  // typing effect
+  // Typing effect
   const typingEl=document.getElementById('typingText');
   const text='Complete IT Infrastructure Solutions';
   let i=0;
-  function step(){typingEl.textContent=text.slice(0,i);i++;if(i<=text.length) setTimeout(step,26)}
+  function step(){ typingEl.textContent=text.slice(0,i); i++; if(i<=text.length) setTimeout(step,26); }
   step();
 
-  // sticky CTA keyboard
-  const sticky=document.querySelector('.sticky-cta');if(sticky){sticky.addEventListener('keypress',e=>{if(e.key==='Enter')sticky.click()})}
+  // Sticky CTA keyboard accessible
+  const sticky=document.querySelector('.sticky-cta');
+  if(sticky){
+    sticky.addEventListener('keypress',e=>{
+      if(e.key==='Enter') sticky.click();
+    });
+  }
 
-  // lazy-load background video
+  // Lazy-load video for fast connections
   const canLoadVideo = window.innerWidth >= 900 && (navigator.connection ? ((navigator.connection.effectiveType||'4g').indexOf('2g')===-1) : true);
-  if(!canLoadVideo){const v=document.querySelector('.hero video'); if(v){v.remove()}}
+  if(!canLoadVideo){
+    const v=document.querySelector('.hero video');
+    if(v) v.remove();
+  }
 
-  // resize debounce
-  let rTO;window.addEventListener('resize',()=>{clearTimeout(rTO);rTO=setTimeout(()=>{/* noop */},200)});
+  // Prevent layout shift on resize
+  let rTO;
+  window.addEventListener('resize',()=>{
+    clearTimeout(rTO);
+    rTO=setTimeout(()=>{},200);
+  });
 });
