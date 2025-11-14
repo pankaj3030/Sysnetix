@@ -77,13 +77,6 @@ const DATA = {
     ]
 };
 
-// ===== UTILITY FUNCTIONS =====
-const createElementFromString = (htmlString) => {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlString.trim();
-    return tempDiv.firstElementChild;
-};
-
 // ===== MOBILE MENU MODULE =====
 const initMobileMenu = () => {
     const btn = document.getElementById('mobileMenuBtn');
@@ -121,7 +114,6 @@ const initTypingEffect = () => {
             textIndex++;
             setTimeout(typeText, 50);
         } else {
-            // Start desc after title
             let descIndex = 0;
             const typeDesc = () => {
                 if (descIndex <= fullDesc.length) {
@@ -136,12 +128,28 @@ const initTypingEffect = () => {
     typeText();
 };
 
+// ===== CALENDLY MODULE =====
+const initCalendly = () => {
+    // Target schedule buttons
+    const scheduleButtons = document.querySelectorAll('.schedule-btn');
+    scheduleButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default if needed
+            if (window.Calendly) {
+                Calendly.showPopupWidget('https://calendly.com/ipankajmehndiratta/30min');
+            } else {
+                console.error('Calendly script not loaded');
+            }
+        });
+    });
+};
+
 // ===== RENDER MODULES =====
 const renderServices = () => {
     const grid = document.getElementById('servicesGrid');
     if (!grid) return;
 
-    grid.innerHTML = DATA.services.map((service, index) => `
+    grid.innerHTML = DATA.services.map(service => `
         <article class="service-card card">
             <div class="card__header">
                 <div class="card__icon">
@@ -165,7 +173,7 @@ const renderWhyUs = () => {
     const grid = document.getElementById('whyGrid');
     if (!grid) return;
 
-    grid.innerHTML = DATA.whyUs.map((item, index) => `
+    grid.innerHTML = DATA.whyUs.map(item => `
         <article class="why-card card">
             <h3 class="card__title">${item.title}</h3>
             <ul class="card__list">
@@ -184,12 +192,12 @@ const renderTestimonials = () => {
     const grid = document.getElementById('testimonialsGrid');
     if (!grid) return;
 
-    grid.innerHTML = DATA.testimonials.map((testimonial, index) => `
+    grid.innerHTML = DATA.testimonials.map(testimonial => `
         <article class="testimonial-card card">
             <div class="stars" role="img" aria-label="5 stars rating">
                 ${[...Array(5)].map(() => '<span class="star" aria-hidden="true">★</span>').join('')}
             </div>
-            <blockquote class="card__quote">"${testimonial.quote}"</blockquote>
+            <blockquote class="card__quote">${testimonial.quote}</blockquote>
             <ul class="card__list">
                 <li class="card__item">
                     <span class="bullet" aria-hidden="true">•</span>
@@ -211,4 +219,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderServices();
     renderWhyUs();
     renderTestimonials();
+    initCalendly();
 });
