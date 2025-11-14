@@ -1,4 +1,3 @@
-// Data for services
 const servicesData = [
     {
         icon: 'fa-cloud',
@@ -31,142 +30,87 @@ const servicesData = [
         features: ["Threat Detection", "Vulnerability Assessment", "Incident Response", "Security Compliance", "Security Awareness"]
     }
 ];
-
-// Data for why choose us
 const whyChooseData = [
-    { 
-        title: "99.9% SLA Guarantee", 
-        features: ["Backed by transparent SLA terms", "Proactive monitoring", "Guaranteed uptime"] 
+    {
+        title: "99.9% SLA Guarantee",
+        features: ["Backed by transparent SLA terms", "Proactive monitoring", "Guaranteed uptime"]
     },
-    { 
-        title: "Rapid Response", 
-        features: ["15-minute response time", "Critical incident support", "24/7 availability"] 
+    {
+        title: "Rapid Response",
+        features: ["15-minute response time", "Critical incident support", "24/7 availability"]
     },
-    { 
-        title: "Enterprise Security", 
-        features: ["Military-grade encryption", "Compliance standards", "Regular audits"] 
+    {
+        title: "Enterprise Security",
+        features: ["Military-grade encryption", "Compliance standards", "Regular audits"]
     },
-    { 
-        title: "Expert Team", 
-        features: ["Certified professionals", "Industry expertise", "Continuous training"] 
+    {
+        title: "Expert Team",
+        features: ["Certified professionals", "Industry expertise", "Continuous training"]
     },
-    { 
-        title: "24/7 Monitoring", 
-        features: ["AI-powered monitoring", "Proactive alerts", "Issue prevention"] 
+    {
+        title: "24/7 Monitoring",
+        features: ["AI-powered monitoring", "Proactive alerts", "Issue prevention"]
     },
-    { 
-        title: "Strategic Planning", 
-        features: ["Technology roadmap", "Business alignment", "Future-ready solutions"] 
+    {
+        title: "Strategic Planning",
+        features: ["Technology roadmap", "Business alignment", "Future-ready solutions"]
     }
 ];
-
-// Data for testimonials
 const testimonialData = [
-    { 
-        company: "Tech Corp", 
-        quote: "SYSNETIX transformed our cloud infrastructure with 40% cost savings.", 
-        author: "John Smith, CTO" 
+    {
+        company: "Tech Corp",
+        quote: "SYSNETIX transformed our cloud infrastructure with 40% cost savings.",
+        author: "John Smith, CTO"
     },
-    { 
-        company: "Enterprise Inc", 
-        quote: "24/7 support has been critical to our business continuity.", 
-        author: "Sarah Johnson, IT Director" 
+    {
+        company: "Enterprise Inc",
+        quote: "24/7 support has been critical to our business continuity.",
+        author: "Sarah Johnson, IT Director"
     },
-    { 
-        company: "Global Solutions", 
-        quote: "Expert team provided seamless migration to Azure.", 
-        author: "Mike Brown, Infrastructure Lead" 
+    {
+        company: "Global Solutions",
+        quote: "Expert team provided seamless migration to Azure.",
+        author: "Mike Brown, Infrastructure Lead"
     }
 ];
-
-// Initialize Calendly when window loads
-window.onload = function() {
-    if (window.Calendly) {
-        Calendly.initBadgeWidget({ 
-            url: 'https://calendly.com/ipankajmehndiratta/30min', 
-            text: 'Schedule time with me', 
-            color: '#0069ff', 
-            textColor: '#ffffff', 
-            branding: true 
-        });
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+});
+// Typing Effect
+const fullText = 'Complete IT Infrastructure Solutions';
+const fullDesc = 'Enterprise-grade solutions in cloud, security, networking, and infrastructure.';
+const typingTextEl = document.getElementById('typingText');
+const typingDescEl = document.getElementById('typingDesc');
+let textIndex = 0;
+const typeText = () => {
+    if (textIndex <= fullText.length) {
+        typingTextEl.textContent = fullText.slice(0, textIndex);
+        textIndex++;
+        setTimeout(typeText, 50);
     }
 };
-
-// Function to open Calendly popup
-function openCalendly() {
-    if (window.Calendly) {
-        Calendly.showPopupWidget('https://calendly.com/ipankajmehndiratta/30min');
-    }
-    return false;
-}
-
-// Mobile Menu Toggle
-function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-    }
-}
-
-// Initialize Contact Button Handlers
-function initContactButtons() {
-    const heroBtn = document.getElementById('heroContactBtn');
-    const navBtn = document.getElementById('navContactBtn');
-    const mobileBtn = document.getElementById('mobileContactBtn');
-    const ctaBtn = document.getElementById('ctaContactBtn');
-
-    if (heroBtn) heroBtn.addEventListener('click', openCalendly);
-    if (navBtn) navBtn.addEventListener('click', openCalendly);
-    if (mobileBtn) mobileBtn.addEventListener('click', openCalendly);
-    if (ctaBtn) ctaBtn.addEventListener('click', openCalendly);
-}
-
-// Typing Effect for Hero Section
-function initTypingEffect() {
-    const fullText = 'Complete IT Infrastructure Solutions';
-    const fullDesc = 'Enterprise-grade solutions in cloud, security, networking, and infrastructure.';
-    const typingTextEl = document.getElementById('typingText');
-    const typingDescEl = document.getElementById('typingDesc');
-
-    let textIndex = 0;
-    const typeText = () => {
-        if (textIndex <= fullText.length) {
-            typingTextEl.textContent = fullText.slice(0, textIndex);
-            textIndex++;
-            setTimeout(typeText, 50);
+typeText();
+setTimeout(() => {
+    let descIndex = 0;
+    const typeDesc = () => {
+        if (descIndex <= fullDesc.length) {
+            typingDescEl.textContent = fullDesc.slice(0, descIndex);
+            descIndex++;
+            setTimeout(typeDesc, 30);
         }
     };
-
-    typeText();
-
-    setTimeout(() => {
-        let descIndex = 0;
-        const typeDesc = () => {
-            if (descIndex <= fullDesc.length) {
-                typingDescEl.textContent = fullDesc.slice(0, descIndex);
-                descIndex++;
-                setTimeout(typeDesc, 30);
-            }
-        };
-        typeDesc();
-    }, fullText.length * 50);
-}
-
-// Render Services Section
+    typeDesc();
+}, fullText.length * 50);
 function renderServices() {
     const servicesGrid = document.getElementById('servicesGrid');
-    if (!servicesGrid) return;
-
     servicesGrid.innerHTML = servicesData.map((service) => `
         <div class="service-card">
             <div class="service-header">
@@ -186,12 +130,8 @@ function renderServices() {
         </div>
     `).join('');
 }
-
-// Render Why Choose Section
 function renderWhyChoose() {
     const whyGrid = document.getElementById('whyGrid');
-    if (!whyGrid) return;
-
     whyGrid.innerHTML = whyChooseData.map((item) => `
         <div class="why-card" style="background-color: #2C4CB8 !important; border: 2px solid #FFD700 !important;">
             <h3 style="color: #FFD700 !important; font-size: 18px !important; font-weight: bold !important; margin-bottom: 16px !important;">${item.title}</h3>
@@ -206,12 +146,8 @@ function renderWhyChoose() {
         </div>
     `).join('');
 }
-
-// Render Testimonials Section
 function renderTestimonials() {
     const testimonialsGrid = document.getElementById('testimonialsGrid');
-    if (!testimonialsGrid) return;
-
     testimonialsGrid.innerHTML = testimonialData.map((testimonial) => `
         <div class="testimonial-card">
             <div class="stars">
@@ -231,12 +167,7 @@ function renderTestimonials() {
         </div>
     `).join('');
 }
-
-// Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
-    initContactButtons();
-    initTypingEffect();
     renderServices();
     renderWhyChoose();
     renderTestimonials();
