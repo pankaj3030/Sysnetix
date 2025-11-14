@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* ===== Theme variables ===== */
     :root{
       --bg: #ffffff;
       --page-bg: linear-gradient(180deg,#f7fbff,#eef5ff);
@@ -27,7 +26,6 @@
       --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    /* ===== Reset / Base ===== */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:var(--ff);margin:0;color:#0f1724;background:var(--page-bg);-webkit-font-smoothing:antialiased}
@@ -35,7 +33,7 @@
     a{text-decoration:none;color:inherit}
     img{max-width:100%;height:auto;display:block}
 
-    /* ===== Header ===== */
+    /* Header */
     .navbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--max-width);margin:0 auto;padding:0 20px}
     .brand{display:flex;align-items:center;gap:14px}
@@ -45,16 +43,15 @@
     .nav-links a:hover{color:var(--primary);background:rgba(45,103,255,0.06)}
     .cta{background:var(--accent);color:#0b1020;padding:10px 18px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(255,215,0,0.12)}
     .menu-btn{display:inline-flex;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
-
     @media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
 
-    /* ===== Hero ===== */
-    .hero{min-height:78vh;display:flex;align-items:center;padding:80px 0;position:relative;overflow:hidden}
+    /* Hero */
+    .hero{min-height:78vh;display:flex;align-items:center;padding:80px 0;position:relative;overflow:hidden;color:#071032}
     .hero-bg{position:absolute;inset:0;pointer-events:none;background:rgba(255,255,255,0.3);z-index:-1;}
     .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
     @media(min-width:960px){.hero-grid{grid-template-columns:1fr 480px}}
-    .hero-left h1{font-size:2.6rem;line-height:1.02;margin:0 0 12px;color:#071032;font-weight:800}
+    .hero-left h1{font-size:2.6rem;line-height:1.02;margin:0 0 12px;font-weight:800}
     .sub{color:var(--muted);font-size:1.05rem;max-width:70ch;margin-bottom:18px}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn-primary{background:linear-gradient(90deg,var(--primary),#dc143c);color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:var(--shadow-md);transition:transform .18s ease}
@@ -68,56 +65,33 @@
     .s1{width:260px;height:260px;background:var(--primary);left:-80px;top:-40px}
     .s2{width:160px;height:160px;background:#d4af37;right:-40px;bottom:60px;opacity:0.25}
 
-    /* ===== Sections ===== */
+    /* Sections */
     section{padding:72px 0}
     .section-title{text-align:center;margin-bottom:28px}
     .section-title h2{font-size:1.9rem;margin:0;color:#071032}
     .section-title p{color:var(--muted);margin-top:10px}
 
-    /* services grid */
-    .services-grid{display:grid;gap:20px;grid-template-columns:repeat(1,1fr)}
+    .services-grid, .why-grid, .testimonials-grid, .contact-grid{display:grid;gap:20px}
+    .services-grid{grid-template-columns:1fr}
     @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr)}}
 
-    .service-card{background:var(--card-bg);padding:22px;border-radius:14px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
-    .service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+    .service-card, .why-card, .testimonial, .contact-card{background:var(--card-bg);padding:22px;border-radius:14px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
+    .service-card:hover,.why-card:hover,.testimonial:hover,.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
     .service-icon{width:52px;height:52px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--primary),#dc143c);color:white;margin-right:12px}
     .service-title{display:flex;align-items:center;gap:8px;font-weight:700;color:#071032}
     .service-list{margin-top:12px;color:var(--muted);font-size:0.95rem}
-
-    /* why us grid */
-    .why-grid{display:grid;gap:18px;grid-template-columns:repeat(1,1fr)}
-    @media(min-width:768px){.why-grid{grid-template-columns:repeat(3,1fr)}}
-    .why-card{background:linear-gradient(180deg,#f8fafc,#fff);padding:20px;border-radius:12px;border:1px solid rgba(13,16,22,0.04);box-shadow:var(--shadow-sm)}
-    .why-card h3{margin:0 0 8px}
-
-    /* testimonials */
-    .testimonials-grid{display:grid;gap:18px;grid-template-columns:repeat(1,1fr)}
-    @media(min-width:768px){.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
-    .testimonial{background:linear-gradient(180deg,#ffffff,#f7fbff);padding:18px;border-radius:12px;border:1px solid rgba(13,16,22,0.04);}
     .stars{color:var(--accent);margin-bottom:8px}
 
-    /* contact */
-    .contact-grid{display:grid;gap:18px;grid-template-columns:repeat(1,1fr);margin-bottom:28px}
+    .contact-grid{grid-template-columns:1fr}
     @media(min-width:768px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
-    .contact-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:20px;border-radius:12px;text-align:center;border:1px solid rgba(13,16,22,0.04)}
 
-    /* sticky CTA */
     .sticky-cta{position:fixed;right:18px;bottom:18px;background:var(--primary);color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 12px 30px rgba(0,56,168,0.26);z-index:80;display:flex;gap:10px;align-items:center}
-
-    /* footer */
     footer{padding:36px 0;background:transparent;color:var(--muted);border-top:1px solid rgba(13,16,22,0.04)}
-
-    /* small helpers */
     .muted{color:var(--muted)}
     .center{text-align:center}
-
-    /* simple reveal animation class */
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
     .reveal.show{opacity:1;transform:none}
-
-    /* accessibility focus */
-    a:focus,button:focus{outline:3px solid rgba(45,103,255,0.16);outline-offset:2px}
   </style>
 </head>
 <body>
@@ -126,9 +100,9 @@
 <header class="navbar" role="banner">
   <div class="nav-inner container">
     <div class="brand">
-      <a href="#home" aria-label="SYSNETIX Home"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo"></a>
+      <a href="#home"><img src="https://raw.githubusercontent.com/pankaj3030/Sysnetix/main/logo.png" alt="SYSNETIX Logo"></a>
     </div>
-    <nav class="nav-links" role="navigation" aria-label="Main">
+    <nav class="nav-links" role="navigation">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
@@ -137,13 +111,13 @@
     </nav>
     <div style="display:flex;align-items:center;gap:12px">
       <button class="cta" id="bookBtn">Schedule</button>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobileMenu" style="display:none;background:white;border-bottom:1px solid rgba(13,16,22,0.04);padding:16px;">
+<div id="mobileMenu" style="display:none;background:white;padding:16px;border-bottom:1px solid rgba(13,16,22,0.04)">
   <div class="container" style="display:flex;flex-direction:column;gap:8px">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -154,16 +128,15 @@
   </div>
 </div>
 
-<!-- HERO with video -->
-<main class="hero" id="home" role="main">
+<!-- HERO -->
+<main class="hero" id="home">
   <video autoplay muted loop playsinline class="hero-video">
     <source src="video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="hero-bg"></div>
-  <div class="shape s1" aria-hidden="true"></div>
-  <div class="shape s2" aria-hidden="true"></div>
-
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
   <div class="container hero-grid">
     <div class="hero-left">
       <h1>Complete <span class="typing" id="typingText">IT Infrastructure Solutions</span></h1>
@@ -172,62 +145,100 @@
         <button class="btn-primary" id="primaryDemo">Get a Free Consultation</button>
         <a class="btn-outline" href="#services">Explore Services</a>
       </div>
-      <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">
-        Trusted by enterprises &middot; ISO-aligned practices &middot; 24/7 support
-      </div>
     </div>
-    <aside class="hero-card" aria-hidden="false">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <div>
-          <div style="font-size:14px;color:var(--muted)">Active Clients</div>
-          <div style="font-weight:800;font-size:20px;color:#071032;">1000+</div>
-        </div>
-        <div>
-          <div style="font-size:14px;color:var(--muted)">Avg. Response</div>
-          <div style="font-weight:800;font-size:20px;color:#071032;">15 min</div>
-        </div>
-      </div>
-      <div style="border-top:1px solid rgba(13,16,22,0.04);padding-top:12px">
-        <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Featured services</div>
-        <ul style="display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:0;margin:0;color:#0f1724;font-weight:600">
-          <li>Cloud & migrations</li>
-          <li>Cybersecurity</li>
-          <li>MS365 & collaboration</li>
-          <li>Network & Wi‑Fi</li>
-        </ul>
+    <aside class="hero-card">
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+        <div><div style="font-size:14px;color:var(--muted)">Active Clients</div><div style="font-weight:800;font-size:20px;color:#071032;">1000+</div></div>
+        <div><div style="font-size:14px;color:var(--muted)">Avg. Response</div><div style="font-weight:800;font-size:20px;color:#071032;">15 min</div></div>
       </div>
     </aside>
   </div>
 </main>
 
-<!-- SERVICES, WHY US, TESTIMONIALS, CONTACT sections will go here -->
-<!-- You can copy the rest of your original code here -->
+<!-- SERVICES -->
+<section id="services">
+  <div class="container section-title"><h2>Services</h2><p>Core enterprise IT services</p></div>
+  <div class="container services-grid" id="servicesGrid"></div>
+</section>
 
-<!-- STICKY CTA -->
-<a href="https://wa.me/447700900000" target="_blank" rel="noopener" class="sticky-cta" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp" style="font-size:18px"></i>
-  <span style="font-weight:700">Chat</span>
-</a>
+<!-- WHY US -->
+<section id="why-us">
+  <div class="container section-title"><h2>Why Choose SYSNETIX</h2><p>Enterprise-grade expertise</p></div>
+  <div class="container why-grid" id="whyGrid"></div>
+</section>
 
-<!-- SCRIPTS -->
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container section-title"><h2>Testimonials</h2></div>
+  <div class="container testimonials-grid" id="testimonialsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container section-title"><h2>Contact</h2></div>
+  <div class="container contact-grid">
+    <div class="contact-card"><i class="fas fa-phone" style="font-size:26px;color:var(--primary)"></i><h3>Phone</h3><div class="muted">+1 (555) 123-4567</div></div>
+    <div class="contact-card"><i class="fas fa-envelope" style="font-size:26px;color:var(--primary)"></i><h3>Email</h3><div class="muted">solutions@sysnetix.com</div></div>
+    <div class="contact-card"><i class="fas fa-map-marker-alt" style="font-size:26px;color:var(--primary)"></i><h3>Office</h3><div class="muted">111 New Union Street, Coventry</div></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="center"><div>© 2025 SYSNETIX Corporation — All rights reserved.</div></footer>
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/447700900000" target="_blank" class="sticky-cta"><i class="fab fa-whatsapp"></i> <span>Chat</span></a>
+
 <script>
-  /* Your existing JS for rendering services, why-us, testimonials, and interactions */
-  // Typing effect
-  const typingEl=document.getElementById('typingText');
-  const text='Complete IT Infrastructure Solutions';
-  let i=0;
-  function step(){typingEl.textContent=text.slice(0,i);i++;if(i<=text.length)setTimeout(step,26)}
-  step();
+const servicesData=[
+{icon:'fa-cloud',title:'Cloud Support',features:['AWS','Azure','GCP','Migration','Optimization']},
+{icon:'fa-globe',title:'MS365',features:['Teams','Exchange','SharePoint','OneDrive','Security']},
+{icon:'fa-server',title:'Citrix & VDI',features:['VDI Deployment','App Streaming','Session Mgmt','Performance','UX']},
+{icon:'fa-wifi',title:'Network',features:['Design','Firewall','VPN','Monitoring','Bandwidth']},
+{icon:'fa-hard-drive',title:'Hardware',features:['Server','Workstation','Storage','Backup','Refresh']},
+{icon:'fa-lock',title:'Cyber Security',features:['Threat Detection','Vuln Assessment','IR','Compliance','Awareness']}
+];
 
-  // Mobile menu toggle
-  const menuBtn=document.getElementById('menuBtn');
-  const mobile=document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click',()=>{const expanded=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!expanded));mobile.style.display=mobile.style.display==='block'?'none':'block';});
+const whyChooseData=[
+{title:'99.9% SLA',features:['Transparent SLA','Proactive monitoring','Guaranteed uptime']},
+{title:'Rapid Response',features:['15-min response','Critical incident','24/7 availability']},
+{title:'Enterprise Security',features:['Encryption','Compliance','Audits']},
+{title:'Expert Team',features:['Certified','Industry expertise','Training']},
+{title:'24/7 Monitoring',features:['AI-powered','Proactive alerts','Prevention']},
+{title:'Strategic Planning',features:['Roadmap','Business alignment','Future-ready']}
+];
 
-  // Schedule button
+const testimonialData=[
+{company:'Tech Corp',quote:'SYSNETIX transformed cloud infra.',author:'John Smith'},
+{company:'Enterprise Inc',quote:'24/7 support critical.',author:'Sarah Johnson'},
+{company:'Global Solutions',quote:'Seamless Azure migration.',author:'Mike Brown'}
+];
+
+function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild}
+
+function renderServices(){const grid=document.getElementById('servicesGrid');servicesData.forEach(s=>{const card=el(`<div class="service-card reveal"><div class="service-title"><span class="service-icon"><i class="fas ${s.icon}"></i></span><div>${s.title}</div></div><div class="service-list"><ul>${s.features.map(f=>`<li>${f}</li>`).join('')}</ul></div></div>`);grid.appendChild(card);})}
+function renderWhy(){const grid=document.getElementById('whyGrid');whyChooseData.forEach(w=>{const card=el(`<div class="why-card reveal"><h3>${w.title}</h3><ul>${w.features.map(f=>`<li>${f}</li>`).join('')}</ul></div>`);grid.appendChild(card);})}
+function renderTestimonials(){const grid=document.getElementById('testimonialsGrid');testimonialData.forEach(t=>{const card=el(`<div class="testimonial reveal"><div class="stars">★★★★★</div><p>"${t.quote}"</p><div>${t.author}</div><div>${t.company}</div></div>`);grid.appendChild(card);})}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderServices();renderWhy();renderTestimonials();
+
+  // typing
+  const typingEl=document.getElementById('typingText');const text='Complete IT Infrastructure Solutions';let i=0;
+  function step(){typingEl.textContent=text.slice(0,i);i++;if(i<=text.length)setTimeout(step,26)};step();
+
+  // mobile menu
+  const menuBtn=document.getElementById('menuBtn');const mobile=document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click',()=>{const expanded=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!expanded));mobile.style.display=mobile.style.display==='block'?'none':'block'});
+
+  // schedule buttons
   function openBooking(){window.open('https://calendly.com/ipankajmehndiratta/30min','_blank','noopener')}
   document.getElementById('bookBtn').addEventListener('click',openBooking);
   document.getElementById('primaryDemo').addEventListener('click',openBooking);
+
+  // reveal on scroll
+  const items=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:0.1}});items.forEach(i=>io.observe(i));
+});
 </script>
 
 </body>
