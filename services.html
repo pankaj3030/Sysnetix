@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - SYSNETIX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i> SYSNETIX
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="whyus.html">Why Us</a>
+                    <a href="index.html#testimonials">Testimonials</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+
+                <button class="demo-btn desktop-nav">Contact Us</button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="demo-btn">Contact Us</button>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Complete Service Portfolio</h1>
+            <p>Six core service areas covering all aspects of enterprise IT infrastructure and security</p>
+        </div>
+    </section>
+
+    <!-- Services Carousel Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Services</h2>
+                <p>Explore our professional IT services with videos</p>
+            </div>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="servicesGrid"></div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Previous service">←</button>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Next service">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Details Section -->
+    <section class="services-details">
+        <div class="container">
+            <h2>Detailed Service Overview</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Each service is designed to meet the unique needs of modern enterprises</p>
+            <div class="services-detail-grid" id="servicesDetailGrid"></div>
+        </div>
+    </section>
+
+    <!-- Service Comparison -->
+    <section class="service-comparison">
+        <div class="container">
+            <h2>Why Our Services Stand Out</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Rapid Deployment</h3>
+                    <p>Get your services up and running quickly with our efficient implementation process.</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Work with certified professionals who have years of enterprise experience.</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Metrics</h3>
+                    <p>Track and measure service performance with detailed reporting and analytics.</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock support team ready to assist whenever you need help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="service-packages">
+        <div class="container">
+            <h2>Service Packages</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Choose the plan that best fits your needs</p>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Starter</h3>
+                        <div class="package-price">
+                            <span class="price">$999</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Up to 50 Devices</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Monthly Reports</li>
+                        <li><i class="fas fa-check"></i> Basic Monitoring</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%;">Get Started</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <div class="featured-badge">Most Popular</div>
+                        <h3>Professional</h3>
+                        <div class="package-price">
+                            <span class="price">$2,499</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Up to 200 Devices</li>
+                        <li><i class="fas fa-check"></i> Phone & Email Support</li>
+                        <li><i class="fas fa-check"></i> Weekly Reports</li>
+                        <li><i class="fas fa-check"></i> Advanced Monitoring</li>
+                        <li><i class="fas fa-check"></i> 24/7 Response</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Choose Plan</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Enterprise</h3>
+                        <div class="package-price">
+                            <span class="price">Custom</span>
+                            <span class="period">Pricing</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Unlimited Devices</li>
+                        <li><i class="fas fa-check"></i> Dedicated Support</li>
+                        <li><i class="fas fa-check"></i> Real-time Reports</li>
+                        <li><i class="fas fa-check"></i> Premium Monitoring</li>
+                        <li><i class="fas fa-check"></i> Custom Solutions</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%;">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="service-process">
+        <div class="container">
+            <h2>Our Service Process</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Assessment</h3>
+                    <p>We analyze your current infrastructure and identify your specific needs and goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Planning</h3>
+                    <p>Our team creates a customized roadmap tailored to your business requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Implementation</h3>
+                    <p>We deploy services efficiently with minimal disruption to your operations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Support</h3>
+                    <p>Ongoing 24/7 support ensures your systems run smoothly at all times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="technology-stack">
+        <div class="container">
+            <h2>Technologies We Use</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Enterprise-grade tools and platforms</p>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <p>AWS</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <p>Microsoft Azure</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <p>Google Cloud</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <p>Cisco</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <p>Fortinet</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <p>Vmware</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container">
+            <h2>Ready to Transform Your IT Infrastructure?</h2>
+            <p>Contact our team to discuss your specific IT requirements and find the perfect solution for your business.</p>
+            <button class="btn btn-primary">Schedule Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">SYSNETIX</div>
+                    <p>Enterprise IT solutions for organizations that demand excellence in security, performance, and reliability.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Cloud Support</a></li>
+                        <li><a href="services.html">MS365 Support</a></li>
+                        <li><a href="services.html">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SYSNETIX Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize services page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServicesCarousel();
+            renderServicesDetails();
+            setupCarouselControls();
+        });
+    </script>
+</body>
+</html>
