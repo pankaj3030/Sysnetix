@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Services Website</title>
+
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#f5f7fa;color:#111}
+    header {padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+    header h1 {margin:0;font-size:24px;font-weight:700}
+    header nav a {margin-left:20px;text-decoration:none;color:#333;font-weight:600}
+
+    /* HERO */
+    .hero {display:flex;align-items:center;justify-content:space-between;padding:80px 60px;position:relative;overflow:hidden}
+    .hero-left {max-width:50%}
+    .hero-left h2 {font-size:52px;margin:0 0 20px;font-weight:800}
+    .hero-left p {font-size:18px;line-height:1.6;color:#444;margin-bottom:30px}
+    .hero-btn {background:#111;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:600;display:inline-block}
+
+    .stat-card {background:#fff;padding:30px;border-radius:20px;max-width:360px;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+    .stat-card h3 {margin:0 0 10px;font-size:22px;font-weight:700}
+    .stat-card p {margin:0;font-size:15px;color:#555}
+
+    /* Floating shapes */
+    .shape {position:absolute;border-radius:50%;filter:blur(45px);opacity:0.35;z-index:-1}
+    .s1 {width:260px;height:260px;background:#7cc0ff;top:-40px;left:-40px}
+    .s2 {width:200px;height:200px;background:#ff9ddb;bottom:-40px;right:-40px}
+
+    /* SECTIONS */
+    section {padding:80px 60px}
+    section h2 {font-size:42px;font-weight:800;margin-bottom:20px}
+    section p {font-size:18px;color:#444;margin-bottom:20px}
+
+    /* SERVICES */
+    .services-slider {display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px}
+    .services-slider::-webkit-scrollbar {display:none}
+
+    .service-card {min-width:330px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+    .service-card video, .service-card img {width:100%;height:220px;object-fit:cover}
+    .service-content {padding:20px}
+    .service-content h3 {margin:0 0 10px;font-size:22px;font-weight:700}
+    .service-content ul {padding-left:20px;margin:0;color:#444;font-size:15px}
+
+    /* ABOUT US */
+    .about-box {background:#fff;padding:40px;border-radius:20px;box-shadow:0 6px 25px rgba(0,0,0,0.08);max-width:900px}
+
+    /* WHY US */
+    .why-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;margin-top:40px}
+    .why-card {background:#fff;padding:30px;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .why-card h3 {margin:0 0 10px;font-size:20px;font-weight:700}
+    .why-card p {margin:0;font-size:15px;color:#555}
+
+    /* TESTIMONIALS */
+    .testimonials {display:flex;overflow-x:auto;gap:20px;padding-bottom:10px}
+    .testimonials::-webkit-scrollbar {display:none}
+
+    .test-card {min-width:320px;background:#fff;border-radius:20px;padding:25px;box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+    .test-card p {font-size:16px;color:#555;margin-bottom:10px}
+    .test-name {font-weight:700;font-size:17px}
+
+    /* CONTACT */
+    .contact-box {background:#fff;padding:40px;border-radius:20px;box-shadow:0 6px 25px rgba(0,0,0,0.08);max-width:600px}
+    .contact-box input, .contact-box textarea {
+      width:100%;padding:14px;margin-top:10px;border-radius:12px;border:1px solid #ccc;font-size:15px
+    }
+    .contact-box button {
+      margin-top:15px;background:#111;color:#fff;padding:14px 20px;border:0;border-radius:12px;font-size:16px;font-weight:600;width:100%;cursor:pointer
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tech Solutions</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#whyus">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+
+    <div class="hero-left">
+      <h2>We Manage Your<br>IT Infrastructure</h2>
+      <p>We provide fully managed IT, cloud, telecom and cybersecurity services for businesses of all sizes with 24/7 UK support.</p>
+      <a class="hero-btn" href="#contact">Get in Touch</a>
+    </div>
+
+    <div class="stat-card">
+      <h3>800+ Devices Managed</h3>
+      <p>Protected with enterprise-grade security and monitoring.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about-box">
+      <p>We are a UK-based IT service provider specialising in fully managed IT, cloud solutions, cybersecurity, Microsoft 365, and 24/7 support.  
+      Our mission is to deliver fast, reliable and scalable IT solutions so businesses can operate without interruptions.</p>
+      <p>With over 10 years of experience and certified engineers, we support small, medium, and enterprise-level organisations.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>Explore our professional IT services tailored for modern businesses.</p>
+
+    <div class="services-slider">
+
+      <div class="service-card">
+        <video src="cloud.mp4" muted loop></video>
+        <div class="service-content">
+          <h3>Cloud Services</h3>
+          <ul>
+            <li>Azure & AWS Migration</li>
+            <li>Cloud Backup</li>
+            <li>Virtual Machines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <video src="ms365.mp4" muted loop></video>
+        <div class="service-content">
+          <h3>Microsoft 365</h3>
+          <ul>
+            <li>Email Hosting</li>
+            <li>SharePoint Setup</li>
+            <li>Teams Integration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <video src="cyber.mp4" muted loop></video>
+        <div class="service-content">
+          <h3>Cyber Security</h3>
+          <ul>
+            <li>Antivirus Management</li>
+            <li>Firewall Protection</li>
+            <li>Threat Monitoring</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <video src="support.mp4" muted loop></video>
+        <div class="service-content">
+          <h3>24/7 IT Support</h3>
+          <ul>
+            <li>Remote Support</li>
+            <li>On-site Visits</li>
+            <li>Device Management</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="whyus">
+    <h2>Why Choose Us</h2>
+    <p>We deliver reliability, speed, and enterprise-level IT solutions.</p>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h3>24/7 UK Support</h3>
+        <p>Always available when you need us — day or night.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Fast Response Time</h3>
+        <p>Our average response time is under 10 minutes.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Certified Engineers</h3>
+        <p>Experts in cloud, security and Microsoft technologies.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Flexible Pricing</h3>
+        <p>Tailored packages for startups, SMEs, and enterprises.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <p>What our clients say about us.</p>
+
+    <div class="testimonials">
+      <div class="test-card">
+        <p>"Professional and extremely responsive. They manage our entire IT infrastructure flawlessly."</p>
+        <div class="test-name">— David, Logistics Co.</div>
+      </div>
+
+      <div class="test-card">
+        <p>"Their 24/7 support is outstanding. We’ve never experienced downtime since switching."</p>
+        <div class="test-name">— Sarah, Accounting Firm</div>
+      </div>
+
+      <div class="test-card">
+        <p>"Excellent cloud migration service. Smooth, fast and zero business interruption."</p>
+        <div class="test-name">— Mark, Construction Group</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Send us a message and our team will get back to you.</p>
+
+    <div class="contact-box">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <input type="text" placeholder="Phone Number">
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.service-card video').forEach(v => {
+      v.addEventListener('mouseenter', () => v.play());
+      v.addEventListener('mouseleave', () => v.pause());
+    });
+  </script>
+
+</body>
+</html>
