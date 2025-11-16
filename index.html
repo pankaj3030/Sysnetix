@@ -43,36 +43,59 @@
         <button class="demo-btn">Contact Us</button>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>Complete IT Infrastructure Solutions</h1>
-                    <p>We deliver secure, scalable and cost-efficient IT solutions — cloud migrations, 24/11 monitoring, managed support and enterprise-grade cybersecurity.</p>
-                    <p class="hero-subtitle">Powering reliability and performance through end-to-end support in virtualization and cybersecurity.</p>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary">Get a Free Consultation</button>
-                        <button class="btn btn-secondary">Explore Services</button>
-                    </div>
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero-video-section">
+        <div class="hero-video-container">
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+
+        <div class="container hero-content-wrapper">
+            <div class="hero-video-content">
+                <h1 class="hero-main-title">
+                    <span class="hero-title-line">Complete IT</span>
+                    <span class="hero-title-line">Infrastructure</span>
+                    <span class="hero-title-line">Solutions</span>
+                </h1>
+                <p class="hero-description">
+                    We deliver secure, scalable and cost-efficient IT solutions — cloud migrations, 24/7 monitoring, managed support and enterprise-grade cybersecurity.
+                </p>
+                <p class="hero-subtitle">
+                    Powering reliability and performance through end-to-end support in virtualization and cybersecurity.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Get a Free Consultation</button>
+                    <button class="btn btn-secondary">Explore Services</button>
                 </div>
-                <div class="hero-visual">
-                    <div class="stats-card">
-                        <div class="stat-item">
-                            <div class="stat-label">Active Clients</div>
-                            <div class="stat-value">1000+</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Avg. Response</div>
-                            <div class="stat-value">15 min</div>
-                        </div>
-                        <div class="featured-services">
-                            <div class="featured-title">Featured services</div>
-                            <div class="service-badges">
-                                <div class="badge">Cloud & migrations</div>
-                                <div class="badge">Cybersecurity</div>
-                                <div class="badge">MS365 & collaboration</div>
-                                <div class="badge">Network & Wi-Fi</div>
+            </div>
+
+            <div class="hero-stats-container">
+                <div class="stats-card-hero">
+                    <div class="stat-item-hero">
+                        <div class="stat-label-hero">Active Clients</div>
+                        <div class="stat-value-hero">1000+</div>
+                    </div>
+                    <div class="stat-item-hero">
+                        <div class="stat-label-hero">Avg. Response</div>
+                        <div class="stat-value-hero">15 min</div>
+                    </div>
+                    <div class="featured-services-hero">
+                        <div class="featured-title-hero">Featured services</div>
+                        <div class="service-badges-hero">
+                            <div class="badge-hero">
+                                <i class="fas fa-check"></i> Cloud & migrations
+                            </div>
+                            <div class="badge-hero">
+                                <i class="fas fa-check"></i> Cybersecurity
+                            </div>
+                            <div class="badge-hero">
+                                <i class="fas fa-check"></i> MS365 & collaboration
+                            </div>
+                            <div class="badge-hero">
+                                <i class="fas fa-check"></i> Network & Wi-Fi
                             </div>
                         </div>
                     </div>
@@ -91,6 +114,85 @@
             <div class="quick-services-grid" id="quickServicesGrid"></div>
             <div class="view-all-services">
                 <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="home-benefits">
+        <div class="container">
+            <h2>Why Choose SYSNETIX</h2>
+            <div class="benefits-preview-grid">
+                <div class="benefit-preview-card">
+                    <div class="benefit-icon-preview">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Military-grade encryption and compliance standards to protect your data</p>
+                </div>
+                <div class="benefit-preview-card">
+                    <div class="benefit-icon-preview">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock support team ready to assist whenever you need help</p>
+                </div>
+                <div class="benefit-preview-card">
+                    <div class="benefit-icon-preview">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Response</h3>
+                    <p>15-minute average response time for critical incidents</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="whyus.html" class="btn btn-secondary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Highlight -->
+    <section class="services-highlight">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Services</h2>
+                <p>Explore our comprehensive IT solutions</p>
+            </div>
+            <div class="featured-services-showcase" id="featuredServicesGrid"></div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="services.html" class="btn btn-primary">Browse All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="stats-showcase-grid">
+                <div class="stat-showcase-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-number">99.9%</div>
+                    <p class="stat-description">Uptime SLA</p>
+                    <p class="stat-text">Enterprise-grade reliability guaranteed</p>
+                </div>
+                <div class="stat-showcase-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">15 min</div>
+                    <p class="stat-description">Response Time</p>
+                    <p class="stat-text">Fast support when you need it most</p>
+                </div>
+                <div class="stat-showcase-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">1000+</div>
+                    <p class="stat-description">Active Clients</p>
+                    <p class="stat-text">Trusted by enterprises worldwide</p>
+                </div>
             </div>
         </div>
     </section>
@@ -195,5 +297,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Initialize home page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuickServices();
+            renderFeaturedServices();
+            renderTestimonials();
+        });
+    </script>
 </body>
 </html>
