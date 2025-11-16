@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSNETIX - Enterprise IT Infrastructure Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #0047ab;
+            border-bottom: 2px solid #FFD700;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInLeft 0.7s ease-out;
+            font-weight: bold;
+            font-size: 20px;
+            color: #FFD700;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            padding: 8px 16px;
+            color: #FFD700;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .demo-btn {
+            display: none;
+            background-color: #FFD700;
+            color: #0047ab;
+            padding: 8px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .demo-btn:hover {
+            background-color: #FFC700;
+        }
+
+        .demo-btn.desktop-nav {
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .demo-btn.desktop-nav {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #FFD700;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: #0047ab;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 16px 24px;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: #FFD700;
+            text-decoration: none;
+            padding: 8px 0;
+            font-weight: 500;
+        }
+
+        .mobile-menu a:hover {
+            color: #FFFFFF;
+        }
+
+        .mobile-menu .demo-btn {
+            display: block;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+            z-index: 2;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        @media (max-width: 767px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .hero-content {
+            animation: slideInLeft 0.7s ease-out;
+            z-index: 10;
+        }
+
+        .typing-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            min-height: 96px;
+        }
+
+        @media (min-width: 768px) {
+            .typing-text {
+                font-size: 56px;
+            }
+        }
+
+        .cursor {
+            display: inline-block;
+            border-right: 3px solid #2563EB;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: #374151;
+            margin-bottom: 16px;
+            min-height: 48px;
+        }
+
+        .hero-subtitle {
+            color: #4B5563;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            animation: slideInUp 0.7s ease-out 2s both;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: #FFD700;
+            color: #111827;
+            box-shadow: 0 20px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #FFC700;
+            color: #000000;
+        }
+
+        .btn-secondary {
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            background-color: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: #FFFFFF;
+            color: #111827;
+        }
+
+        .hero-visual {
+            animation: slideInRight 0.7s ease-out;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .hero-visual {
+                display: block;
+            }
+        }
+
+        .hero-content-box {
+            text-align: center;
+        }
+
+        .rocket-emoji {
+            font-size: 56px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .enterprise-text {
+            color: #4169E1;
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .clients-text {
+            color: #4169E1;
+            margin-top: 16px;
+            display: none;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 64px;
+            text-align: left;
+            animation: slideInDown 0.7s ease-out;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b0000;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 24px;
+            background-color: #f9f9f9;
+        }
+
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 24px;
+            scrollbar-width: thin;
+            scrollbar-color: #FFD700 #f9f9f9;
+        }
+
+        .services-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .services-grid::-webkit-scrollbar-track {
+            background: #f9f9f9;
+        }
+
+        .services-grid::-webkit-scrollbar-thumb {
+            background: #FFD700;
+            border-radius: 3px;
+        }
+
+        .services-grid::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+
+        .service-card-with-video {
+            background-color: #FFFFFF;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            animation: slideInUp 0.6s ease-out both;
+            flex: 0 0 100%;
+            min-width: 280px;
+        }
+
+        @media (min-width: 768px) {
+            .service-card-with-video {
+                flex: 0 0 calc(50% - 12px);
+                min-width: 280px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-card-with-video {
+                flex: 0 0 calc(33.333% - 16px);
+                min-width: 280px;
+            }
+        }
+
+        .service-card-with-video:hover {
+            border-color: #8b0000;
+            box-shadow: 0 10px 15px rgba(139, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-card-with-video:nth-child(1) { animation-delay: 0.05s; }
+        .service-card-with-video:nth-child(2) { animation-delay: 0.1s; }
+        .service-card-with-video:nth-child(3) { animation-delay: 0.15s; }
+        .service-card-with-video:nth-child(4) { animation-delay: 0.2s; }
+        .service-card-with-video:nth-child(5) { animation-delay: 0.25s; }
+        .service-card-with-video:nth-child(6) { animation-delay: 0.3s; }
+
+        .service-video {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-card-content {
+            padding: 24px;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #FFD700;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0047ab;
+            font-size: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .service-card-with-video:hover .service-icon {
+            background-color: #8b0000;
+            color: #FFD700;
+        }
+
+        .service-card-with-video h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .service-card-with-video ul {
+            list-style: none;
+        }
+
+        .service-card-with-video li {
+            display: flex;
+            gap: 8px;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .service-card-with-video li::before {
+            content: '✓';
+            color: #8b0000;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0047ab;
+            color: #FFD700;
+            padding: 48px 24px;
+            border-top: 2px solid #FFD700;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-title {
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .footer-grid p {
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+        .footer-grid h4 {
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 16px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid li {
+            margin-bottom: 8px;
+        }
+
+        .footer-grid a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-grid a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 2px solid #FFD700;
+            padding-top: 32px;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i> SYSNETIX
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <button class="demo-btn desktop-nav">Contact Us</button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <button class="demo-btn">Contact Us</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1 class="typing-text">
+                        <span id="typingText" style="color: #FFD700;"></span><span class="cursor" style="color: #FFD700;">|</span>
+                    </h1>
+                    <p id="typingDesc" class="hero-desc" style="color: #FFD700;"></p>
+                    <p class="hero-subtitle" style="color: #FFD700;">Powering reliability and performance through end-to-end support in virtualization and cybersecurity.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            Schedule Consultation <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-box">
+                        <div class="hero-content-box">
+                            <div class="rocket-emoji">🚀</div>
+                            <p class="enterprise-text">Enterprise Power</p>
+                            <p class="clients-text">Trusted by 1000+ Organizations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Expert support for your IT operations</p>
+            </div>
+            
+            <div class="services-carousel">
+                <div class="services-grid" id="servicesGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">SYSNETIX</div>
+                    <p>Enterprise IT solutions for organizations that demand excellence in security, performance, and reliability.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Cloud Support</a></li>
+                        <li><a href="#services">MS365 Support</a></li>
+                        <li><a href="#services">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SYSNETIX Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const servicesData = [
+            {
+                icon: 'fa-cloud',
+                title: "Cloud Support",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["AWS Management", "Azure Administration", "GCP Solutions", "Cloud Migration", "Cost Optimization"]
+            },
+            {
+                icon: 'fa-envelope',
+                title: "MS365 Support",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["Teams Administration", "Exchange Management", "SharePoint Governance", "OneDrive Support", "Security Configuration"]
+            },
+            {
+                icon: 'fa-desktop',
+                title: "Citrix & VDI",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["VDI Deployment", "App Streaming", "Session Management", "Performance Tuning", "UX Optimization"]
+            },
+            {
+                icon: 'fa-wifi',
+                title: "Network Support",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["Network Design", "Firewall Management", "VPN Solutions", "Network Monitoring", "Bandwidth Optimization"]
+            },
+            {
+                icon: 'fa-server',
+                title: "Hardware Support",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["Server Management", "Workstation Support", "Storage Solutions", "Backup Systems", "Hardware Refresh"]
+            },
+            {
+                icon: 'fa-lock',
+                title: "Cyber Security",
+                video: "https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4",
+                features: ["Threat Detection", "Vulnerability Assessment", "Incident Response", "Security Compliance", "Security Awareness"]
+            }
+        ];
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Typing Effect
+        const fullText = 'Complete IT Infrastructure Solutions';
+        const fullDesc = 'Enterprise-grade solutions in cloud, security, networking, and infrastructure.';
+        const typingTextEl = document.getElementById('typingText');
+        const typingDescEl = document.getElementById('typingDesc');
+
+        let textIndex = 0;
+        const typeText = () => {
+            if (textIndex <= fullText.length) {
+                typingTextEl.textContent = fullText.slice(0, textIndex);
+                textIndex++;
+                setTimeout(typeText, 50);
+            }
+        };
+
+        typeText();
+
+        setTimeout(() => {
+            let descIndex = 0;
+            const typeDesc = () => {
+                if (descIndex <= fullDesc.length) {
+                    typingDescEl.textContent = fullDesc.slice(0, descIndex);
+                    descIndex++;
+                    setTimeout(typeDesc, 30);
+                }
+            };
+            typeDesc();
+        }, fullText.length * 50);
+
+        function renderServices() {
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = servicesData.map((service) => `
+                <div class="service-card-with-video">
+                    <video class="service-video" controls>
+                        <source src="${service.video}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="service-card-content">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas ${service.icon}"></i>
+                            </div>
+                            <h3>${service.title}</h3>
+                        </div>
+                        <ul>
+                            ${service.features.map(feature => `
+                                <li>${feature}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+        });
+    </script>
+</body>
+</html>
