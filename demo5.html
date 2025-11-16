@@ -65,20 +65,59 @@
     .services-section {padding:80px 60px; animation: fadeIn 1s ease-out forwards;}
     .services-section h2 {font-size:42px;font-weight:800;margin-bottom:20px;}
     .services-section p {color:#444;margin-bottom:40px;font-size:18px;}
-    .services-slider {display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;}
-    .services-slider::-webkit-scrollbar {display:none;}
-    .service-card {
-      min-width:330px;
-      background:#fff;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 6px 20px rgba(0,0,0,0.1);
-      position:relative;
-      transition: transform 0.3s ease;
-      animation: slideIn .8s ease-out forwards;
-    }
-    .service-card:hover {transform: translateY(-5px);}
-    .service-card video, .service-card img {width:100%;height:220px;object-fit:cover;}
+  
+  .services-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.service-card {
+  position: relative;
+  min-width: 320px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.service-overlay h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.service-overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+  
     .service-content {padding:20px;}
     .service-content h3 {font-size:22px;font-weight:700;margin-bottom:10px;}
     .service-content ul {padding-left:20px;margin:0;color:#444;font-size:15px;}
