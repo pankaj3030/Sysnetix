@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guruji Tech Global</title>
+  <style>
+    * {box-sizing: border-box;}
+    body {margin:0;font-family:Arial, sans-serif;background:#f5f7fa;color:#111;scroll-behavior: smooth;}
+    h2, h3 {margin:0;}
+    a {text-decoration:none;}
+
+    /* HEADER */
+    header {padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);position:sticky;top:0;z-index:1000;}
+    header h1 {font-size:24px;font-weight:700;}
+    header nav a {margin-left:20px;color:#333;font-weight:600;}
+    header nav a:hover {color:#111;}
+
+    /* HERO */
+    .hero {display:flex;align-items:center;justify-content:space-between;padding:80px 60px;position:relative;overflow:hidden;flex-wrap:wrap;color:#fff;}
+    .hero video {position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+    .hero::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:-1;}
+    .hero-left {max-width:50%;position:relative;z-index:1;}
+    .hero-left h2 {font-size:52px;margin-bottom:20px;font-weight:800;line-height:1.2;}
+    .hero-left p {font-size:18px;line-height:1.6;color:#fff;margin-bottom:30px;}
+    .hero-btn {background:#fff;color:#111;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:600;display:inline-block;}
+
+    .stat-card {background:#fff;padding:30px;border-radius:20px;max-width:360px;box-shadow:0 8px 30px rgba(0,0,0,0.1);margin-top:20px;}
+    .stat-card h3 {font-size:22px;font-weight:700;margin-bottom:10px;}
+    .stat-card p {font-size:15px;color:#555;}
+
+    /* SERVICES */
+    .services-section {padding:80px 60px;}
+    .services-section h2 {font-size:42px;font-weight:800;margin-bottom:20px;}
+    .services-section p {color:#444;margin-bottom:40px;font-size:18px;}
+
+    .services-slider {display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;}
+    .services-slider::-webkit-scrollbar {display:none;}
+    
+    .service-card {min-width:330px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.1);position:relative;transition: transform 0.3s ease;}
+    .service-card:hover {transform: translateY(-5px);}
+    .service-card video, .service-card img {width:100%;height:220px;object-fit:cover;}
+    .service-content {padding:20px;}
+    .service-content h3 {font-size:22px;font-weight:700;margin-bottom:10px;}
+    .service-content ul {padding-left:20px;margin:0;color:#444;font-size:15px;}
+
+    /* ABOUT / WHY / TESTIMONIALS / CONTACT */
+    section {animation:fadeIn 1s ease-out forwards;}
+    .about-box, .why-card, .test-card, .contact-box {background:#fff;padding:30px;border-radius:20px;box-shadow:0 6px 25px rgba(0,0,0,0.08);}
+    .why-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;margin-top:40px;}
+    .testimonials {display:flex;overflow-x:auto;gap:20px;padding-bottom:10px;}
+    .contact-box input, .contact-box textarea, .contact-box button {width:100%;padding:14px;margin-top:10px;border-radius:12px;border:1px solid #ccc;font-size:15px;}
+    .contact-box button {background:#111;color:#fff;border:none;cursor:pointer;font-weight:600;}
+    .contact-box button:hover {background:#333;}
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {0% {opacity:0;}100% {opacity:1;}}
+    @keyframes fadeUp {0% {opacity:0;transform:translateY(30px);}100% {opacity:1;transform:translateY(0);}}
+    @keyframes slideIn {0% {opacity:0;transform:translateX(40px);}100% {opacity:1;transform:translateX(0);}}
+    .hero-left, .stat-card {animation:fadeUp 1s ease-out forwards;}
+    .service-card {animation:slideIn .8s ease-out forwards;}
+
+    /* RESPONSIVE */
+    @media (max-width:1024px){.hero-left{max-width:60%;}.stat-card{margin-top:30px;}}
+    @media (max-width:768px){.hero{padding:60px 30px;flex-direction:column;align-items:flex-start;}.hero-left h2{font-size:40px;}.services-section{padding:60px 30px;}}
+    @media (max-width:480px){.hero-left h2{font-size:32px;}.services-section h2{font-size:32px;}}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Guruji Tech Global</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO with background video -->
+  <section class="hero">
+    <video src="video.mp4" autoplay muted loop playsinline></video>
+    <div class="hero-left">
+      <h2>We <span id="typewriter"></span><br>IT Infrastructure</h2>
+      <p>We provide fully managed IT, cloud, telecom and cybersecurity services for businesses of all sizes with 24/7 UK support.</p>
+      <a class="hero-btn" href="#contact">Get in Touch</a>
+    </div>
+    <div class="stat-card">
+      <h3>800+ Devices Managed</h3>
+      <p>Protected with enterprise‑grade security and monitoring.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <h2>Our Services</h2>
+    <p>Explore our professional IT services tailored for modern businesses.</p>
+
+    <div class="services-slider">
+      <div class="service-card">
+        <video src="2.mp4" muted loop playsinline></video>
+        <div class="service-content">
+          <h3>Cloud Services</h3>
+          <ul>
+            <li>Azure & AWS Migration</li>
+            <li>Cloud Backup</li>
+            <li>Virtual Machines</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <video src="ms365.mp4" muted loop playsinline></video>
+        <div class="service-content">
+          <h3>Microsoft 365</h3>
+          <ul>
+            <li>Email Hosting</li>
+            <li>SharePoint Setup</li>
+            <li>Teams Integration</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <video src="cyber.mp4" muted loop playsinline></video>
+        <div class="service-content">
+          <h3>Cyber Security</h3>
+          <ul>
+            <li>Antivirus Management</li>
+            <li>Firewall Protection</li>
+            <li>Threat Monitoring</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <video src="support.mp4" muted loop playsinline></video>
+        <div class="service-content">
+          <h3>24/7 IT Support</h3>
+          <ul>
+            <li>Remote Support</li>
+            <li>On‑site Visits</li>
+            <li>Device Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding:80px 60px">
+    <h2>About Us</h2>
+    <div class="about-box" style="max-width:900px;">
+      <p>We are a UK-based IT service provider specialising in managed IT, cloud solutions, cybersecurity, Microsoft 365 and full 24/7 monitoring.</p>
+      <p>Our mission is to deliver fast, reliable and scalable IT solutions so businesses can focus on growth.</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="whyus" style="padding:80px 60px">
+    <h2>Why Choose Us</h2>
+    <p>We provide enterprise‑grade technology solutions with unmatched reliability.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>24/7 UK Support</h3><p>Always available when you need us.</p></div>
+      <div class="why-card"><h3>Certified Engineers</h3><p>Highly trained experts in cloud and security.</p></div>
+      <div class="why-card"><h3>Fast Response Time</h3><p>Average response time under 10 minutes.</p></div>
+      <div class="why-card"><h3>Flexible Pricing</h3><p>Packages designed for all business sizes.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="padding:80px 60px">
+    <h2>Testimonials</h2>
+    <p>What our clients say about us.</p>
+    <div class="testimonials">
+      <div class="test-card"><p>"Guruji Tech Global transformed our IT infrastructure. Outstanding service!"</p><div style="font-weight:700;font-size:17px;">— David, Logistics Co.</div></div>
+      <div class="test-card"><p>"Fast response, highly professional, and very knowledgeable."</p><div style="font-weight:700;font-size:17px;">— Sarah, Accounting Firm</div></div>
+      <div class="test-card"><p>"Reliable team. Best experience with cloud migration so far."</p><div style="font-weight:700;font-size:17px;">— Mark, Construction Group</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:80px 60px">
+    <h2>Contact Us</h2>
+    <p>Reach out and our team will respond shortly.</p>
+    <div class="contact-box" style="max-width:600px;">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <input type="text" placeholder="Phone Number">
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111;color:#fff;padding:40px;text-align:center;border-top-left-radius:20px;border-top-right-radius:20px;">
+    <p>© 2025 Guruji Tech Global. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Autoplay videos on hover (desktop) & autoplay muted on mobile
+    const videos = document.querySelectorAll('.service-card video');
+    videos.forEach(v => {
+      v.play().catch(()=>{}); // autoplay muted default
+      v.addEventListener('mouseenter', ()=>v.play());
+      v.addEventListener('mouseleave', ()=>v.pause());
+    });
+
+    // Typing effect
+    const words = ["Manage Your", "Support Your", "Secure Your", "Modernise Your"];
+    let i=0, j=0, current="", isDeleting=false;
+    function type(){
+      const element = document.getElementById("typewriter");
+      const word = words[i];
+      current = word.slice(0, j);
+      element.textContent = current;
+
+      if(!isDeleting && j < word.length){ j++; setTimeout(type,120);}
+      else if(isDeleting && j>0){ j--; setTimeout(type,70);}
+      else{ isDeleting = !isDeleting; if(!isDeleting) i=(i+1)%words.length; setTimeout(type,1200);}
+    }
+    window.onload = type;
+  </script>
+</body>
+</html>
