@@ -195,6 +195,30 @@ function renderQuickServices() {
 }
 
 // ========================================
+// FEATURED SERVICES RENDERING (HOME PAGE)
+// ========================================
+function renderFeaturedServices() {
+    const featuredServicesGrid = document.getElementById('featuredServicesGrid');
+    if (!featuredServicesGrid) return;
+
+    const featuredServices = servicesData.slice(0, 3);
+    featuredServicesGrid.innerHTML = featuredServices.map((service) => `
+        <div class="featured-service-card">
+            <div class="featured-service-icon">
+                <i class="fas ${service.icon}"></i>
+            </div>
+            <h3>${service.title}</h3>
+            <p>Enterprise-grade ${service.title.toLowerCase()} with 24/7 support and guaranteed uptime SLA.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 16px; text-align: left; font-size: 13px; color: #666;">
+                ${service.features.slice(0, 3).map(feature => `
+                    <li style="margin-bottom: 6px;">✓ ${feature}</li>
+                `).join('')}
+            </ul>
+        </div>
+    `).join('');
+}
+
+// ========================================
 // WHY CHOOSE US RENDERING
 // ========================================
 function renderWhyChoose() {
