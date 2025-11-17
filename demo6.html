@@ -250,11 +250,62 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section id="about" style="padding:80px 60px">
+    <h2>About Us</h2>
+    <div class="about-box" style="max-width:900px;">
+      <p>We are a UK-based IT service provider specialising in managed IT, cloud solutions, cybersecurity, Microsoft 365 and full 24/7 monitoring.</p>
+      <p>Our mission is to deliver fast, reliable and scalable IT solutions so businesses can focus on growth.</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="whyus" style="padding:80px 60px">
+    <h2>Why Choose Us</h2>
+    <p>We provide enterprise‑grade technology solutions with unmatched reliability.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>24/7 UK Support</h3><p>Always available when you need us.</p></div>
+      <div class="why-card"><h3>Certified Engineers</h3><p>Highly trained experts in cloud and security.</p></div>
+      <div class="why-card"><h3>Fast Response Time</h3><p>Average response time under 10 minutes.</p></div>
+      <div class="why-card"><h3>Flexible Pricing</h3><p>Packages designed for all business sizes.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="padding:80px 60px">
+    <h2>Testimonials</h2>
+    <p>What our clients say about us.</p>
+    <div class="testimonials">
+      <div class="test-card"><p>"Guruji Tech Global transformed our IT infrastructure. Outstanding service!"</p><div style="font-weight:700;font-size:17px;">— David, Logistics Co.</div></div>
+      <div class="test-card"><p>"Fast response, highly professional, and very knowledgeable."</p><div style="font-weight:700;font-size:17px;">— Sarah, Accounting Firm</div></div>
+      <div class="test-card"><p>"Reliable team. Best experience with cloud migration so far."</p><div style="font-weight:700;font-size:17px;">— Mark, Construction Group</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:80px 60px">
+    <h2>Contact Us</h2>
+    <p>Reach out and our team will respond shortly.</p>
+    <div class="contact-box" style="max-width:600px;">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <input type="text" placeholder="Phone Number">
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111;color:#fff;padding:40px;text-align:center;border-top-left-radius:20px;border-top-right-radius:20px;">
+    <p>© 2025 Guruji Tech Global. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script>
-    // Service video autoplay & hover
+    // Autoplay videos on hover (desktop) & autoplay muted on mobile
     const videos = document.querySelectorAll('.service-card video');
     videos.forEach(v => {
-      v.play().catch(()=>{}); 
+      v.play().catch(()=>{}); // autoplay muted default
       v.addEventListener('mouseenter', ()=>v.play());
       v.addEventListener('mouseleave', ()=>v.pause());
     });
@@ -267,12 +318,13 @@
       const word = words[i];
       current = word.slice(0, j);
       element.textContent = current;
+
       if(!isDeleting && j < word.length){ j++; setTimeout(type,120);}
       else if(isDeleting && j>0){ j--; setTimeout(type,70);}
       else{ isDeleting = !isDeleting; if(!isDeleting) i=(i+1)%words.length; setTimeout(type,1200);}
     }
     window.onload = type;
   </script>
-
 </body>
 </html>
+
