@@ -30,7 +30,11 @@
       height:100px;
       width: 290px;
     }
-
+.logo-container img,
+.logo-container video {
+  margin: 0;
+  padding: 0;
+}
     header nav a {
       margin-left:20px;
       color:#333;
@@ -176,9 +180,14 @@
 
   <!-- HEADER -->
   <header>
-    <a href="#" class="logo">
-      <video src="logo.mp4" autoplay muted loop playsinline class="logo-video"></video> <img src="logo.png" class="logo-img">
-    </a>
+   # <a href="#" class="logo">
+    #  <video src="logo.mp4" autoplay muted loop playsinline class="logo-video"></video> <img src="logo.png" class="logo-img">
+    #</a>
+    <div class="logo-container">
+  <video src="logo.mp4" autoplay muted loop></video>
+  <img src="image.png" alt="logo image">
+</div>
+
     <nav>
       <a href="#">Home</a>
       <a href="#about">About</a>
