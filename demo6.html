@@ -37,17 +37,30 @@
   width: 100px;
   gap: 10px;
 }
-    .logo-container img {
-      height:120px;
-      width: 320px; 
-    }
-    
-    header nav a {
-      margin-left:20px;
-      color:#333;
-      font-weight:600;
-    }
-    header nav a:hover {color:#111;}
+    header {
+  display: flex;
+  align-items: center;      /* vertically align logo + menu */
+  justify-content: space-between;
+  padding: 10px 40px;       /* reduce top/bottom padding */
+  height: 90px;             /* fix navbar height */
+}
+
+.logo-container img {
+  height: 70px;             /* reduce logo height */
+  width: auto;              /* ensure correct proportion */
+  display: block;
+}
+
+header nav a {
+  margin-left: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  color: #111;
+}
+
 
     /* HERO */
     .hero {
