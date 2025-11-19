@@ -390,12 +390,10 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <div class="contact-box">
-    <form action="https://api.silentforms.app/submit" method="POST">
+   <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
 
-  <!-- SilentForms API Key (replace with your new one) -->
-  <input type="hidden" name="api_key" value="YOUR_NEW_API_KEY">
+  <input type="hidden" name="_captcha" value="false">
 
-  <!-- Your Form Fields -->
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
@@ -411,14 +409,11 @@
     <textarea id="message" name="message" rows="4" required></textarea>
   </div>
 
-  <!-- Honeypot Anti-Spam -->
-  <input type="text" name="honeypot" style="display:none">
-
-  <!-- Optional Webhook (remove if not using) -->
-  <input type="hidden" name="webhook" value="https://yourwebhook.url">
+  <input type="text" name="_honey" style="display:none">
 
   <button type="submit">Send Message</button>
 </form>
+
 
   </div>
 </section>
