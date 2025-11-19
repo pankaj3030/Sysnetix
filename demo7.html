@@ -461,16 +461,15 @@ header nav a:hover {
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" style="padding:80px 60px">
-    <h2>Contact Us</h2>
-    <p>Reach out and our team will respond shortly.</p>
-     <form action="https://api.silentforms.app/submit" method="POST">
+  <section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <form action="https://api.silentforms.app/submit" method="POST">
 
-  <!-- Your API key from SilentForms -->
-  <input type="hidden" name="api_key" value="75f3696ff3f14bcb3e41ce752fe5784f5da79decb7ccbfd93aacffb60cf75c03"> 
+  <!-- SilentForms API Key (replace with your new one) -->
+  <input type="hidden" name="api_key" value="YOUR_NEW_API_KEY">
 
-  <!-- Form fields -->
+  <!-- Your Form Fields -->
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
@@ -486,16 +485,17 @@ header nav a:hover {
     <textarea id="message" name="message" rows="4" required></textarea>
   </div>
 
-  <!-- Honeypot spam protection -->
+  <!-- Honeypot Anti-Spam -->
   <input type="text" name="honeypot" style="display:none">
 
-  <!-- Optional: Webhook to forward submissions -->
+  <!-- Optional Webhook (remove if not using) -->
   <input type="hidden" name="webhook" value="https://yourwebhook.url">
 
   <button type="submit">Send Message</button>
 </form>
 
-  </section>
+  </div>
+</section>
 
  
 
