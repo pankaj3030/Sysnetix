@@ -963,6 +963,21 @@
     height: 24px;
 }
 
+
+        .cal-btn {
+    padding: 12px 20px;
+    background: #0069ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.cal-btn:hover {
+    background: #0053cc;
+}
+
+
     </style>
 </head>
 <body>
@@ -1135,6 +1150,17 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     Chat with us
 </a>
+
+    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR-USERNAME'});return false;"
+   class="cal-btn">
+  Book a Call
+</a>
+
+<script type="text/javascript"
+        src="https://assets.calendly.com/assets/external/widget.js"
+        async>
+</script>
+
 
 
     <!-- Footer -->
