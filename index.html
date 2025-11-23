@@ -933,6 +933,36 @@
         #why-us .section-header p {
             color: #FFFFFF !important;
         }
+
+    .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.whatsapp-button img {
+    width: 24px;
+    height: 24px;
+}
+
     </style>
 </head>
 <body>
@@ -1100,6 +1130,12 @@
             </div>
         </div>
     </section>
+
+    <a href="https://wa.me/447123456789?text=Hi%20I%20need%20help" class="whatsapp-button" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    Chat with us
+</a>
+
 
     <!-- Footer -->
     <footer class="footer">
