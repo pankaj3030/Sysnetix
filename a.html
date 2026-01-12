@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Name – Fine Dining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="hero">
+    <nav class="nav">
+        <a href="#" class="logo">Restaurant Name</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reserve">Reservations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home" class="hero-content">
+        <h1>Experience Culinary Excellence</h1>
+        <p>Seasonal flavors, locally sourced ingredients, unforgettable moments.</p>
+        <a href="#reserve" class="btn-primary">Reserve a Table</a>
+    </section>
+</header>
+
+<main>
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <h2>Our Menu</h2>
+        <div class="tabs">
+            <button class="tab active" data-category="starters">Starters</button>
+            <button class="tab" data-category="mains">Mains</button>
+            <button class="tab" data-category="desserts">Desserts</button>
+            <button class="tab" data-category="drinks">Drinks</button>
+        </div>
+        <div class="menu-items" id="menu-items">
+            <!-- JavaScript will inject dish cards here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <h2>About Us</h2>
+        <div class="about-grid">
+            <img src="images/chef.jpg" alt="Chef portrait" class="about-img">
+            <div class="about-text">
+                <p>Founded in 2020, our restaurant blends tradition with innovation. Our head chef, <strong>Chef Aisha Khan</strong>, crafts each plate with passion and precision.</p>
+                <p>We source the freshest produce from local farms and support sustainable practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reserve" class="section">
+        <h2>Reserve a Table</h2>
+        <form id="reservation-form" class="form">
+            <label>
+                Name
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Phone
+                <input type="tel" name="phone" required>
+            </label>
+            <label>
+                Date
+                <input type="date" name="date" required>
+            </label>
+            <label>
+                Time
+                <input type="time" name="time" required>
+            </label>
+            <label>
+                Guests
+                <input type="number" name="guests" min="1" max="20" required>
+            </label>
+            <button type="submit" class="btn-primary">Book Now</button>
+        </form>
+        <p id="form-message" class="form-message"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Flavor Street, Food City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123‑4567</p>
+                <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
